@@ -5,10 +5,10 @@ export const profile = {
   avatar: '/picture/avatars/yokonad.webp',
   location: 'Perú',
   links: [
-    { label: 'GitHub', url: 'https://github.com/Yokonad' },
+    { label: 'GitHub', url: 'https://github.com/y0konad' },
     { label: 'Instagram', url: 'https://www.instagram.com/yk.nadrr/' },
     { label: 'Discord', url: 'https://discord.com/users/773971588054908928' },
-    { label: 'Email', url: 'mailto:danramos939@gmail.com' },
+    { label: 'Gmail', url: 'mailto:danramos939@gmail.com' },
   ],
 };
 
@@ -19,21 +19,21 @@ export const projects = [
     description:
       'Calculadora de subredes VLSM y enlaces punto a punto /30 entre routers. Valida direcciones IP, calcula máscaras, wildcards y asigna direcciones de forma óptima desde una interfaz interactiva en consola.',
     tags: ['Python', 'Networking', 'CLI'],
-    url: 'https://github.com/Yokonad/Subneteo-VLSM',
+    url: 'https://github.com/y0konad/Subneteo-VLSM',
   },
   {
     title: 'MCP Gemini Packet',
     description:
       'Proyecto MCP orientado a flujos con Gemini y Packet Tracer para automatizar tareas y mejorar procesos de trabajo técnico.',
     tags: ['TypeScript', 'Node.js', 'MCP', 'Packet Tracer'],
-    url: 'https://github.com/Yokonad/mcp-gemini-packet.git',
+    url: 'https://github.com/y0konad/mcp-gemini-packet.git',
   },
   {
     title: 'Calculadora Resistencias',
     description:
       'Calculadora profesional de resistencias electrónicas por código de colores. Soporta resistencias de 4, 5 y 6 bandas con tolerancia, coeficiente térmico, historial de cálculos y valores comerciales cercanos.',
     tags: ['Python', 'Electrónica', 'CLI'],
-    url: 'https://github.com/Yokonad/Calculadora-Resistencias',
+    url: 'https://github.com/y0konad/Calculadora-Resistencias',
   },
 ];
 
@@ -53,12 +53,12 @@ export const team = [
   {
     name: 'Insent1208',
     role: 'Frontend Engineer',
-    bio: 'Especialista en UI/UX FrontEnd y Diseño Gráfico enfocado en mejorar la experiencia de usuario. Creativo y detallista.',
+    bio: 'Especialista en UI/UX, Frontend y diseño gráfico enfocado en optimizar la experiencia de usuario. Creativo y detallista.',
     avatar: '/picture/avatars/insent.webp',
     tags: ['Frontend', 'Python', 'UI/UX'],
   },
   {
-    name: 'Yokonad',
+    name: 'y0konad',
     role: 'Owner & Fullstack Dev',
     bio: 'Experto en desarrollo web completo y arquitecturas escalables. Especialista en React y Node.js.',
     avatar: '/picture/avatars/perfil_equipo.webp',

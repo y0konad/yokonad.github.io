@@ -3,26 +3,29 @@
 @tailwind utilities;
 
 /* ─────────────────────────────────────────────
-   YOKONAD CODEX — tema "papel" (zine retro)
+   YOKONAD CODEX — Flumen Senior Stream Design System
    ───────────────────────────────────────────── */
 :root {
-  --paper: #000000;
-  --paper-2: #1a1a1a;
-  --panel: #0a0a0a;
-  --ink: #f4f4f5;
-  --ink-soft: #9a9aa3;
-  --violet: #0e0e0e;
-  --violet-deep: #f4f4f5;
-  --violet-bright: #8b6cf6;
-  --violet-pale: #d6cbf2;
-  --cream: #f4f4f5;
-  /* Morado exclusivo de KoroSoft Community */
-  --korosoft: #6b4fd6;
+  --paper: #020408;
+  --paper-2: #040711;
+  --panel: rgba(5, 9, 17, 0.95);
+  --panel-solid: #050911;
+  --panel-hover: #080e1a;
+  --panel-border: rgba(255, 255, 255, 0.06);
+  --panel-border-hover: rgba(255, 255, 255, 0.14);
+  --ink: #f1f5f9;
+  --ink-soft: #94a3b8;
+  --ink-muted: #64748b;
+  --blue-subtle: #0f1d3a;
+  --blue-accent: #1d4ed8;
+  --blue-soft: #60a5fa;
+  --cream: #f1f5f9;
+  --htb-green: #9fef00;
 
   /* ── Barrera lateral: distancia entre el borde de la ventana y el contenido ── */
-  --edge: 13%;
+  --edge: 11%;
   /* ── Separación vertical entre bloques de la página ── */
-  --gap: 1.75rem;
+  --gap: 2rem;
 }
 
 /* Pila vertical con separación uniforme entre secciones */
@@ -32,19 +35,25 @@
   gap: var(--gap);
 }
 
-/* Etiqueta de sección (cabecera de bloque) */
+/* Etiqueta de sección (sobria y sutil) */
 .section-label {
-  background: var(--violet);
-  color: var(--cream);
-  border: 2px solid var(--ink);
-  padding: 0.45rem 0.8rem;
-  font-weight: 700;
-  font-size: 0.74rem;
-  letter-spacing: 0.2em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #050911;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  width: fit-content;
 }
 
-/* Margen lateral por porcentaje (solo en pantallas medianas+; en móvil queda compacto) */
+/* Margen lateral por porcentaje */
 .codex-edges {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -65,10 +74,8 @@
 
 html {
   scroll-behavior: smooth;
-  /* Evita el scroll horizontal en móvil: el elemento que scrollea es <html>,
-     así que el overflow-x debe estar aquí (además de en <body>). Recorta el
-     pequeño sobresalir de los pines decorativos sin afectar el diseño. */
   overflow-x: hidden;
+  background-color: var(--paper);
 }
 
 body {
@@ -76,6 +83,10 @@ body {
   font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
   color: var(--ink);
   background-color: var(--paper);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(8, 14, 28, 0.7), transparent),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
+  background-size: 100% 100%, 24px 24px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -86,12 +97,12 @@ p {
 }
 
 ::selection {
-  background: var(--violet-bright);
-  color: var(--cream);
+  background: #1e3a8a;
+  color: #ffffff;
 }
 
 a {
-  color: var(--violet-deep);
+  color: #93c5fd;
   text-decoration: none;
 }
 
@@ -102,17 +113,25 @@ a {
   letter-spacing: -0.01em;
 }
 
-/* ── Ventanas con cromo retro ── */
+/* ── Ventanas y tarjetas Flumen (Sobrias, Cuadradas, Estáticas) ── */
 .win {
-  border: 2px solid var(--ink);
+  border: 1px solid var(--panel-border);
   background: var(--panel);
-  box-shadow: 4px 4px 0 rgba(244, 244, 245, 0.22);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  border-radius: 2px;
+  box-shadow: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  overflow: hidden;
 }
 
 .win:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0 rgba(244, 244, 245, 0.28);
+  border-color: var(--panel-border-hover);
+  background: var(--panel-hover);
+  box-shadow: none;
+  transform: none;
+}
+
+.win:active {
+  transform: none;
 }
 
 .win-bar {
@@ -120,46 +139,85 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding: 0.35rem 0.6rem;
-  background: var(--violet);
-  color: var(--cream);
-  border-bottom: 2px solid var(--ink);
+  padding: 0.45rem 0.85rem;
+  background: #050911;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   font-family: 'IBM Plex Mono', monospace;
-  font-weight: 700;
-  font-size: 0.64rem;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .win-bar.is-ink {
-  background: #050505;
+  background: #020408;
 }
 
-.win-btns {
-  display: inline-flex;
-  gap: 4px;
-  flex-shrink: 0;
-}
-
-.win-btns i {
-  width: 9px;
-  height: 9px;
-  display: inline-block;
-  border: 1.5px solid var(--cream);
-  background: transparent;
-}
-
-/* ── Barra de título de sección ── */
+/* ── Barra de título de sección / botones ── */
 .bar-title {
-  background: var(--korosoft);
-  color: var(--cream);
-  border: 2px solid var(--ink);
-  padding: 0.4rem 0.7rem;
-  font-weight: 700;
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
+  display: inline-block;
+  background: #190e2b;
+  color: #e9d5ff;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  padding: 0.45rem 0.85rem;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.bar-title:hover {
+  background: #2b1348;
+  border-color: rgba(168, 85, 247, 0.6);
+  color: #ffffff;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+
+.bar-title:active {
+  transform: none;
+}
+
+/* ── Variantes temáticas de botones ── */
+.bar-title--htb {
+  background: #091403;
+  border-color: rgba(159, 239, 0, 0.35);
+  color: #9fef00;
+}
+.bar-title--htb:hover,
+.group:hover .bar-title--htb {
+  background: #142807;
+  border-color: rgba(159, 239, 0, 0.7);
+  color: #ffffff;
+}
+
+.bar-title--blue {
+  background: #071324;
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+}
+.bar-title--blue:hover,
+.group:hover .bar-title--blue {
+  background: #0e223d;
+  border-color: rgba(56, 189, 248, 0.65);
+  color: #ffffff;
+}
+
+.bar-title--red {
+  background: #1a0606;
+  border-color: rgba(239, 68, 68, 0.38);
+  color: #fca5a5;
+}
+.bar-title--red:hover,
+.group:hover .bar-title--red {
+  background: #2b0c0c;
+  border-color: rgba(239, 68, 68, 0.7);
+  color: #ffffff;
 }
 
 /* ── Capitular (drop cap) ── */
@@ -169,37 +227,36 @@ a {
   font-size: 3.6rem;
   line-height: 0.72;
   padding: 0.05em 0.18em 0 0;
-  color: var(--violet-deep);
+  color: #cbd5e1;
 }
 
-/* ── Resaltado morado en bloque ── */
+/* ── Resaltado sutil en bloque ── */
 .hl {
-  background: var(--violet-bright);
-  color: #140f24;
-  padding: 0.02em 0.2em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  font-weight: 700;
+  background: rgba(30, 58, 138, 0.35);
+  color: #93c5fd;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.4);
+  padding: 0.05em 0.25em;
+  font-weight: 600;
 }
 
 /* ── Divisor punteado ── */
 .dashrule {
   border: none;
-  border-top: 2px dashed rgba(244, 244, 245, 0.45);
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
   margin: 0;
 }
 
 /* ── Marca de cita gigante ── */
 .qmark {
   font-family: 'Rubik Mono One', monospace;
-  color: var(--violet);
+  color: #1e293b;
   line-height: 0.6;
 }
 
 /* ── Item de lista con rombo ── */
 .diamond::before {
-  content: '✦';
-  color: var(--violet-deep);
+  content: '▪';
+  color: #64748b;
   margin-right: 0.55rem;
 }
 
@@ -211,13 +268,14 @@ a {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  border: 1.5px solid var(--ink);
-  background: var(--violet-bright);
-  color: #140f24;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #f1f5f9;
   font-size: 10px;
   font-weight: 700;
   line-height: 1;
   margin-top: 2px;
+  border-radius: 2px;
 }
 
 /* ── Efecto scramble en títulos ── */
@@ -356,9 +414,9 @@ a {
 .logoloop {
   position: relative;
   overflow: hidden;
-  border: 2px solid var(--ink);
-  background: #ffffff;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #050911;
+  border-radius: 2px;
   padding: 16px 0;
 }
 
@@ -382,29 +440,36 @@ a {
 }
 
 .logoloop__item img {
-  height: 38px;
+  height: 36px;
   width: auto;
   display: block;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.85) contrast(1.1);
+  transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
 .logoloop__chip {
   display: inline-flex;
   align-items: center;
-  height: 38px;
+  height: 34px;
   padding: 0 12px;
-  border: 2px solid var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 2px;
   color: var(--ink);
-  font-weight: 700;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 12px;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logoloop__item:hover img,
+.logoloop__item:hover img {
+  filter: brightness(1.15);
+  transform: none;
+}
+
 .logoloop__item:hover .logoloop__chip {
-  transform: scale(1.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: none;
 }
 
 @keyframes logoloop-scroll {
@@ -422,58 +487,43 @@ a {
   }
 }
 
-/* ── Calendario de contribuciones de GitHub ── */
-/* Escritorio: la rejilla ocupa todo el ancho del cuadro sin salirse */
+/* ── Calendario de contribuciones de GitHub (Sobrio & Estático) ── */
 .gh-grid {
   display: flex;
-  width: 100%;
-  gap: 2px;
+  gap: 3px;
+  min-width: 640px;
+  padding: 4px 2px;
 }
 
 .gh-week {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   flex: 1 1 0;
   min-width: 0;
 }
 
-/* Celda base (la usa también la leyenda → tamaño fijo pequeño) */
+/* Celda base */
 .gh-cell {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   display: inline-block;
-  border-radius: 2px;
+  border-radius: 1px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
-/* Celdas dentro de la rejilla: se estiran para llenar el ancho (cuadradas) */
+/* Celdas dentro de la rejilla */
 .gh-week .gh-cell {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
 }
 
-/* Móvil (≤640px): transponer → semanas en filas, repartidas en 2 columnas */
-@media (max-width: 640px) {
-  .gh-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(27, auto);
-    grid-auto-columns: max-content;
-    justify-content: center;
-    gap: 2px 12px;
-    width: auto;
-  }
-  .gh-week {
-    flex-direction: row;
-    flex: 0 0 auto;
-  }
-  .gh-week .gh-cell {
-    width: 13px;
-    height: 13px;
-    aspect-ratio: auto;
-  }
+.gh-week .gh-cell:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.45);
+  transform: none;
+  box-shadow: none;
 }
 
 /* ── Write-ups (cuadros + página de detalle) ── */

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 // Cada comando con su comentario explicando para qué sirve.
 const SCRIPT = [
   { c: 'comment', t: '# conectarte a la VPN de Hack The Box\n' },
-  { c: 'cmd', t: '$ sudo openvpn lab_yokonad.ovpn\n' },
+  { c: 'cmd', t: '$ sudo openvpn lab_y0konad.ovpn\n' },
   { c: 'comment', t: '# comprobar que llegas a la máquina objetivo\n' },
   { c: 'cmd', t: '$ ping -c1 10.10.10.10' },
 ];
@@ -54,7 +54,7 @@ export default function HtbTerminal() {
   return (
     <div className="win">
       <div className="win-bar" style={{ background: '#000000', color: '#f4f4f5' }}>
-        <span>root@yokonad: ~/htb</span>
+        <span>root@y0konad: ~/htb</span>
         <span className="win-btns">
           <i></i>
           <i></i>

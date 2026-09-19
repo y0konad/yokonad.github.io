@@ -2,8 +2,8 @@
 import '../styles/global.css';
 
 const {
-  title = 'yokonad',
-  description = 'Yokonad (Dan Ramos Reynaldo) — portafolio de un estudiante de ciberseguridad y desarrollador web de Perú: proyectos de redes, Linux, Python y desarrollo web.',
+  title = 'y0konad | Ciberseguridad, Redes y Desarrollo Web',
+  description = 'Portafolio de y0konad (Dan Ramos Reynaldo) — Egresado de ciberseguridad y desarrollador web en Perú. Proyectos de redes, Linux, Python, herramientas y write-ups de hacking ético.',
   path = '/',
   image = '/picture/avatars/yokonad.webp',
   type = 'website',
@@ -16,12 +16,12 @@ const ogImage = image.startsWith('http') ? image : SITE + image;
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Yokonad',
+  name: 'y0konad',
   alternateName: 'Dan Ramos Reynaldo',
   url: 'https://yokonad.online/',
   image: 'https://yokonad.online/picture/avatars/yokonad.webp',
-  jobTitle: 'Estudiante de Ciberseguridad y Desarrollador Web',
-  sameAs: ['https://github.com/Yokonad', 'https://www.instagram.com/yk.nadrr/'],
+  jobTitle: 'Egresado de Ciberseguridad y Desarrollador Web',
+  sameAs: ['https://github.com/y0konad', 'https://www.instagram.com/yk.nadrr/'],
 };
 ---
 
@@ -33,9 +33,9 @@ const schema = {
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content="Yokonad, portafolio Yokonad, ciberseguridad, desarrollo web, React, Python, Linux, redes, SENATI"
+      content="y0konad, portafolio y0konad, ciberseguridad, desarrollo web, React, Python, Linux, redes, SENATI"
     />
-    <meta name="author" content="Yokonad" />
+    <meta name="author" content="y0konad" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content={type} />
@@ -53,7 +53,7 @@ const schema = {
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Rubik+Mono+One&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#6b4fd6" />
+    <meta name="theme-color" content="#020408" />
     <link rel="icon" href="/picture/logos/linux.ico" />
     <title>{title}</title>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />

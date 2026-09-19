@@ -17,24 +17,24 @@ const stack = [
   'Proyectos open-source',
 ];
 
-// Logos del carrusel (Simple Icons CDN). Sin slug => se muestra como texto.
+// Logos del carrusel con colores de marca para el glow (logos oficiales)
 const techLogos = [
-  { slug: 'javascript', title: 'JavaScript' },
-  { slug: 'react', title: 'React' },
-  { slug: 'nodedotjs', title: 'Node.js' },
-  { slug: 'python', title: 'Python' },
-  { slug: 'css', title: 'CSS' },
-  { slug: 'git', title: 'Git' },
-  { slug: 'openjdk', title: 'Java' },
-  { slug: 'tailwindcss', title: 'Tailwind' },
-  { slug: 'html5', title: 'HTML' },
-  { slug: 'linux', title: 'Linux' },
-  { slug: 'archlinux', title: 'Arch' },
-  { slug: 'ubuntu', title: 'Ubuntu' },
-  { slug: 'go', title: 'Go' },
-  { slug: 'npm', title: 'npm' },
-  { slug: 'claude', title: 'Claude' },
-  { slug: 'deepseek', title: 'DeepSeek' },
+  { slug: 'javascript', title: 'JavaScript', color: '#F7DF1E' },
+  { slug: 'react', title: 'React', color: '#61DAFB' },
+  { slug: 'nodedotjs', title: 'Node.js', color: '#5FA04E' },
+  { slug: 'python', title: 'Python', src: '/picture/logos/python.svg', color: '#3776AB' },
+  { slug: 'css', title: 'CSS', color: '#A855F7' }, // Morado
+  { slug: 'git', title: 'Git', color: '#F05032' },
+  { slug: 'java', title: 'Java / OpenJDK', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: '#E76F00' },
+  { slug: 'tailwindcss', title: 'Tailwind', color: '#06B6D4' },
+  { slug: 'html5', title: 'HTML', color: '#E34F26' },
+  { slug: 'linux', title: 'Linux', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', color: '#FCC624' },
+  { slug: 'archlinux', title: 'Arch', color: '#1793D1' },
+  { slug: 'ubuntu', title: 'Ubuntu', color: '#E95420' },
+  { slug: 'go', title: 'Go', color: '#00ADD8' },
+  { slug: 'npm', title: 'npm', color: '#CB3837' },
+  { slug: 'claude', title: 'Claude', color: '#D97757' },
+  { slug: 'deepseek', title: 'DeepSeek', color: '#4D6BFE' },
 ];
 
 // Reproductor de música — playlist (8 canciones)
@@ -49,88 +49,81 @@ const tracks = [
   { id: 'ZjZecW1BvZE', title: 'Mi Primer Día Sin Ti', artist: 'Los Enanitos Verdes' },
 ];
 
-// Colores por marca para las tarjetas de contacto
+// Iconos para las tarjetas de contacto
 const linkConfig = {
   GitHub: {
-    icon: '#17141f',
-    bar: 'background:#17141f',
     path: 'M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z',
   },
   Instagram: {
-    icon: '#E1306C',
-    bar: 'background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)',
     path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z',
   },
   Discord: {
-    icon: '#5865F2',
-    bar: 'background:#5865F2',
     path: 'M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.095 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z',
   },
-  Email: {
-    icon: '#17141f',
-    bar: 'background:#4d6bf2',
-    path: 'M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+  Gmail: {
+    path: 'M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z',
   },
 };
 
-// Colores por lenguaje/etiqueta del equipo (ajustados para fondo claro)
+// Colores por lenguaje/etiqueta del equipo y proyectos (Medio Morado Oscuro)
 const tagColors = {
-  Python: { border: '#3776AB', bg: 'rgba(55,118,171,0.18)', text: '#7bb8ef' },
-  Android: { border: '#3DDC84', bg: 'rgba(61,220,132,0.18)', text: '#5fe89f' },
-  Streaming: { border: '#9146FF', bg: 'rgba(145,70,255,0.18)', text: '#bd93ff' },
-  Frontend: { border: '#F97316', bg: 'rgba(249,115,22,0.18)', text: '#ffa25e' },
-  'UI/UX': { border: '#EC4899', bg: 'rgba(236,72,153,0.18)', text: '#ff86bf' },
-  Cisco: { border: '#1BA0D7', bg: 'rgba(27,160,215,0.18)', text: '#5cccf7' },
-  HTML: { border: '#E34F26', bg: 'rgba(227,79,38,0.18)', text: '#ff8767' },
-  JavaScript: { border: '#e6cf2e', bg: 'rgba(247,223,30,0.20)', text: '#f5e14e' },
+  Python: { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
+  Android: { border: 'rgba(168,85,247,0.4)', bg: 'rgba(107,33,168,0.25)', text: '#e9d5ff' },
+  Streaming: { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
+  Frontend: { border: 'rgba(168,85,247,0.4)', bg: 'rgba(107,33,168,0.25)', text: '#e9d5ff' },
+  'UI/UX': { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
+  Cisco: { border: 'rgba(126,34,206,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#c084fc' },
+  HTML: { border: 'rgba(168,85,247,0.4)', bg: 'rgba(107,33,168,0.25)', text: '#e9d5ff' },
+  JavaScript: { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
+  Networking: { border: 'rgba(126,34,206,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#c084fc' },
+  CLI: { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
+  TypeScript: { border: 'rgba(168,85,247,0.4)', bg: 'rgba(107,33,168,0.25)', text: '#e9d5ff' },
+  'Node.js': { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
+  MCP: { border: 'rgba(192,132,252,0.4)', bg: 'rgba(126,34,206,0.25)', text: '#f3e8ff' },
+  'Packet Tracer': { border: 'rgba(126,34,206,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#c084fc' },
+  Electrónica: { border: 'rgba(147,51,234,0.4)', bg: 'rgba(88,28,135,0.25)', text: '#d8b4fe' },
 };
 
 const tagStyle = (t) => {
   const c = tagColors[t];
   return c
     ? `border:1px solid ${c.border};background:${c.bg};color:${c.text}`
-    : 'border:1px solid var(--ink-soft);color:var(--ink-soft)';
+    : 'border:1px solid rgba(255,255,255,0.1);color:#94a3b8';
 };
 ---
 
 <Layout>
   <div id="top" class="codex-edges codex-stack w-full py-4 sm:py-6">
     <!-- ═══════════ MASTHEAD ═══════════ -->
-    <header class="flex items-center justify-between border-2 border-[var(--ink)] bg-[var(--violet)] px-3 py-2 text-[var(--cream)]">
-      <span class="text-[9px] sm:text-[12px] font-bold tracking-[0.14em] uppercase">
-        YOKONAD // ISSUE 001 // 2026
+    <header class="flex items-center justify-between rounded-[2px] border border-white/5 bg-[#040711]/95 px-3 sm:px-4 py-2.5 text-slate-200">
+      <span class="text-[10px] sm:text-[12px] font-semibold tracking-[0.14em] uppercase text-slate-300 font-mono flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-purple-400"></span>
+        // y0konad
       </span>
-      <span class="flex items-center gap-2 sm:gap-3 text-[9px] sm:text-[12px] font-bold tracking-[0.14em] uppercase">
-        <span id="codex-clock" class="hidden sm:inline tabular-nums">--:--:--</span>
-        <span class="normal-case">yokonad.dev</span>
-        <span class="win-btns"><i></i><i></i><i></i></span>
+      <span class="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[12px] font-medium tracking-[0.14em] uppercase">
+        <span id="codex-clock" class="hidden sm:inline tabular-nums text-slate-400 font-mono">--:--:--</span>
       </span>
     </header>
 
-    <!-- ═══════════ 1 · TÍTULO ═══════════ -->
+    <!-- ═══════════ 1 · TÍTULO / HERO ═══════════ -->
     <section>
-      <p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--ink)] mb-3">
-        ◆ Editorial · Carta del autor
-      </p>
+      <div class="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300 bg-[#040711] border border-white/5 px-3 py-1 rounded-[2px] mb-3 font-mono">
+        <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-purple-400"></span>
+        // Perú · Ciberseguridad & Desarrollo
+      </div>
       <div class="flex flex-col lg:flex-row lg:items-end gap-5 lg:gap-8">
         <div class="lg:flex-1 min-w-0 lg:self-start">
-          <h1 class="display uppercase leading-[0.84]" style="text-shadow:4px 4px 0 #52525b">
+          <h1 class="display uppercase leading-[0.84] text-white tracking-tight">
             <span class="scramble block text-[clamp(2.6rem,11vw,5.6rem)]">Desde</span>
             <span class="scramble block text-[clamp(2.6rem,11vw,5.6rem)]">Mi</span>
-            <span id="hero-l3" class="scramble block text-[clamp(2.6rem,11vw,5.6rem)]">Terminal</span>
+            <span id="hero-l3" class="scramble block text-[clamp(2.6rem,11vw,5.6rem)] text-white">Terminal</span>
           </h1>
-          <p class="mt-4 text-[13px] sm:text-[14px] leading-relaxed max-w-2xl">
+          <p class="mt-4 text-[13px] sm:text-[14px] leading-relaxed text-slate-300 max-w-2xl font-mono">
             Ciberseguridad, redes y código desde Perú. Un recorrido por proyectos y la comunidad que
             construyo en el camino. Entre terminales, Linux y buena música, documento lo que aprendo y
             comparto cada paso del proceso.
           </p>
         </div>
-        <img
-          src="/picture/logos/slash-titulo.webp"
-          alt="Yokonad"
-          loading="eager"
-          class="w-full max-w-[420px] sm:max-w-lg lg:max-w-none lg:w-[48%] object-contain self-center lg:self-end shrink-0"
-        />
       </div>
     </section>
 
@@ -141,56 +134,55 @@ const tagStyle = (t) => {
       <!-- Presentación con avatar -->
       <div class="win">
         <div class="win-bar is-ink">
-          <span class="scramble">YOKONAD_PROFILE</span>
-          <span class="win-btns"><i></i><i></i><i></i></span>
+          <span class="scramble text-slate-200">Perfil // y0konad</span>
+          <span class="text-[9px] text-slate-400 font-mono">[Online]</span>
         </div>
         <div class="p-4 sm:p-5 grid gap-5 sm:grid-cols-[auto_1fr] items-start">
           <!-- Avatar grande -->
           <div class="relative mx-auto sm:mx-0 shrink-0">
             <img
               src={profile.avatar}
-              alt="Yokonad"
+              alt="y0konad"
               loading="eager"
-              class="w-44 h-52 sm:w-48 sm:h-60 object-cover border-2 border-[var(--ink)]"
-              style="box-shadow:6px 6px 0 rgba(244,244,245,0.28)"
+              class="w-44 h-52 sm:w-48 sm:h-60 object-cover rounded-[2px] border border-white/5"
             />
-            <span class="absolute -bottom-2.5 left-2 inline-flex items-center gap-1.5 bg-[#0c0c0e] border border-[var(--ink)] text-[var(--cream)] text-[9px] uppercase tracking-widest px-2 py-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#3fb950]" style="box-shadow:0 0 6px #3fb950"></span>
+            <span class="absolute -bottom-2.5 left-2 inline-flex items-center gap-1.5 bg-[#020408] border border-white/10 text-slate-200 text-[9px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-[2px] font-mono">
+              <span class="w-1.5 h-1.5 rounded-[1px] bg-purple-400"></span>
               Disponible
             </span>
           </div>
 
           <!-- Info -->
           <div class="min-w-0">
-            <p class="display text-3xl sm:text-4xl text-[var(--ink)] lowercase leading-none">yokonad</p>
-            <p class="text-[11px] uppercase tracking-[0.2em] text-[var(--ink-soft)] mt-2.5">Dan Ramos Reynaldo</p>
-            <p class="text-[12px] mt-0.5">Estudiante de Ciberseguridad</p>
-            <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-[var(--ink-soft)]">
+            <p class="display text-3xl sm:text-4xl text-white lowercase leading-none">y0konad</p>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-slate-300 mt-2.5 font-mono">Dan Ramos Reynaldo</p>
+            <p class="text-[12px] text-slate-300 mt-0.5 font-mono font-medium">Egresado de Ciberseguridad</p>
+            <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-slate-400 font-mono">
               <span>◈ {profile.location}</span>
-              <span>◈ SENATI · 6.º ciclo</span>
+              <span>◈ SENATI · Egresado</span>
               <span>◈ Redes · Linux · Web</span>
             </div>
-            <p class="mt-3 text-[12.5px] leading-relaxed">
-              Lo que empezó como curiosidad por entender cómo funcionan las máquinas hoy son
-              proyectos, retos y una comunidad.
+            <p class="mt-3 text-[12.5px] leading-relaxed text-slate-300">
+              Lo que empezó como curiosidad por entender cómo funcionan las máquinas, hoy se
+              convirtió en proyectos, retos y comunidad.
             </p>
 
             <!-- Ficha de datos -->
-            <div class="mt-4 border-t-2 border-dashed border-[rgba(244,244,245,0.25)] pt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-1.5">
+            <div class="mt-4 border-t border-white/5 pt-3.5 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2 font-mono">
               {
                 [
-                  ['Apodo', 'yokonad'],
+                  ['Apodo', 'y0konad'],
                   ['Ubicación', 'Perú'],
                   ['Estudios', 'Ciberseguridad · SENATI'],
-                  ['Ciclo', '6.º — en curso'],
+                  ['Condición', 'Egresado'],
                   ['Enfoque', 'Seguridad defensiva'],
                   ['Intereses', 'Anime · Música'],
                   ['Combustible', 'Código & café'],
                   ['Estado', 'Disponible'],
                 ].map(([k, v]) => (
-                  <div class="flex gap-2 text-[11px]">
-                    <span class="text-[var(--ink-soft)] uppercase tracking-widest text-[9px] w-24 shrink-0 pt-px">{k}</span>
-                    <span class="flex-1 font-medium">{v}</span>
+                  <div class="flex gap-2 text-[11px] items-center">
+                    <span class="text-slate-400 uppercase tracking-wider text-[9px] w-24 shrink-0">{k}</span>
+                    <span class="flex-1 font-medium text-slate-200">{v}</span>
                   </div>
                 ))
               }
@@ -203,24 +195,28 @@ const tagStyle = (t) => {
       <div class="grid gap-4 md:grid-cols-2">
         <div class="win">
           <div class="win-bar"><span class="scramble">Sobre mí</span></div>
-          <div class="p-3 text-[12px] leading-relaxed">
-            <p class="mb-2.5">Este portafolio existe como un espacio para aprender, construir y compartir.</p>
-            <ul class="space-y-1.5">
-              <li class="diamond">Estudiante de Ciberseguridad — SENATI</li>
-              <li class="diamond">Redes, Linux y desarrollo web</li>
-              <li class="diamond">La música como combustible diario</li>
+          <div class="p-4 text-[12px] leading-relaxed text-slate-300 font-mono">
+            <p class="mb-3">Este portafolio existe como un espacio para aprender, construir y compartir.</p>
+            <ul class="space-y-2">
+              <li class="diamond text-slate-200">Egresado de Ciberseguridad — SENATI</li>
+              <li class="diamond text-slate-200">Redes, Linux y desarrollo web</li>
+              <li class="diamond text-slate-200">La música como combustible diario</li>
             </ul>
-            <p class="mt-2.5 text-[var(--ink-soft)] italic">Aprendiendo algo nuevo cada día.</p>
+            <p class="mt-3 text-slate-400 italic font-mono text-[11px]">Aprendiendo algo nuevo cada día.</p>
           </div>
         </div>
 
         <div class="win">
           <div class="win-bar is-ink">
-            <span class="scramble">STACK.LOG</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
+            <span class="scramble">Stack técnico</span>
+            <span class="text-[9px] text-slate-400 font-mono">[6 ITEMS]</span>
           </div>
-          <ul class="p-3 text-[11.5px] leading-relaxed space-y-1">
-            {stack.map((s) => <li>&gt; {s}</li>)}
+          <ul class="p-4 text-[11.5px] leading-relaxed space-y-1.5 font-mono text-slate-300">
+            {stack.map((s) => (
+              <li class="flex items-center gap-2">
+                <span class="text-purple-400 font-bold">&gt;</span> {s}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -230,10 +226,15 @@ const tagStyle = (t) => {
         <div class="logoloop__track">
           {
             [...techLogos, ...techLogos].map((l, i) => (
-              <span class="logoloop__item" title={l.title || l.text} aria-hidden={i >= techLogos.length ? 'true' : undefined}>
-                {l.slug ? (
+              <span
+                class="logoloop__item"
+                title={l.title || l.text}
+                aria-hidden={i >= techLogos.length ? 'true' : undefined}
+                style={`--glow: ${l.color || '#9fef00'}`}
+              >
+                {l.src || l.slug ? (
                   <img
-                    src={`https://cdn.simpleicons.org/${l.slug}`}
+                    src={l.src || `https://cdn.simpleicons.org/${l.slug}`}
                     alt={l.title}
                     loading="lazy"
                     decoding="async"
@@ -251,46 +252,37 @@ const tagStyle = (t) => {
       </div>
     </section>
 
-    <!-- ═══════════ 3 · CONTACTO ═══════════ -->
+    <!-- ═══════════ 3 · PROYECTOS ═══════════ -->
     <section class="space-y-4">
-      <div class="section-label">// Contacto</div>
-      <div class="grid gap-3 sm:grid-cols-2">
+      <div class="section-label">// Proyectos</div>
+      <div class="grid gap-3 sm:grid-cols-3">
         {
-          profile.links.map((link) => {
-            const cfg = linkConfig[link.label] || { bar: 'background:#17141f', path: null };
-            const handle =
-              link.label === 'Discord'
-                ? 'Yokonad'
-                : link.url.replace('mailto:', '').replace('https://', '').replace('www.', '');
-            return (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex items-center gap-4 border-2 border-[var(--ink)] bg-[var(--panel)] p-3.5 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_rgba(244,244,245,0.3)]"
-              >
-                <span
-                  class="flex items-center justify-center w-12 h-12 shrink-0 border-2 border-[var(--ink)] text-[var(--cream)] transition-transform duration-150 group-hover:scale-105"
-                  style={cfg.bar}
-                >
-                  {cfg.path && (
-                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                      <path d={cfg.path} />
-                    </svg>
-                  )}
+          projects.map((p) => (
+            <a href={p.url} target="_blank" rel="noopener noreferrer" class="win flex flex-col group">
+              <div class="win-bar is-ink">
+                <span class="scramble text-slate-200">{p.title}</span>
+                <span class="text-[9px] text-slate-400 font-mono">[Open Source]</span>
+              </div>
+              <div class="p-3.5 flex-1 flex flex-col font-mono">
+                <p class="text-[11.5px] leading-snug text-slate-300 flex-1">{p.description}</p>
+                <div class="flex flex-wrap gap-1.5 mt-3">
+                  {p.tags.map((t) => (
+                    <span class="px-2 py-0.5 text-[9px] uppercase tracking-wide font-semibold rounded-[2px]" style={tagStyle(t)}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <span class="mt-3 text-[11px] font-bold text-purple-400 group-hover:text-purple-300 flex items-center gap-1">
+                  Ver en GitHub →
                 </span>
-                <span class="flex-1 min-w-0">
-                  <span class="block text-[13px] font-bold uppercase tracking-[0.18em]">{link.label}</span>
-                  <span class="block text-[11.5px] text-[var(--ink-soft)] truncate">{handle}</span>
-                </span>
-              </a>
-            );
-          })
+              </div>
+            </a>
+          ))
         }
       </div>
     </section>
 
-    <!-- ═══════════ HACK THE BOX ═══════════ -->
+    <!-- ═══════════ 4 · HACK THE BOX ═══════════ -->
     <section class="space-y-4">
       <div class="section-label">// Hack The Box</div>
       <div class="grid gap-3 md:grid-cols-2">
@@ -299,70 +291,75 @@ const tagStyle = (t) => {
           href="https://app.hackthebox.com/users/2072316"
           target="_blank"
           rel="noopener noreferrer"
-          class="win overflow-hidden flex flex-col"
+          class="win overflow-hidden flex flex-col group"
         >
-          <div class="win-bar" style="background:#131c2b;color:var(--cream)">
-            <span class="scramble">HACK THE BOX</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
+          <div class="win-bar is-ink">
+            <span class="scramble text-slate-200">Hack The Box // Perfil</span>
+            <span class="text-[9px] text-slate-400 font-mono">[ID: 2072316]</span>
           </div>
-          <div class="w-full h-40 flex items-center justify-center border-b-2 border-[var(--ink)] p-4" style="background:#131c2b">
-            <img src="/picture/logos/logo_htb.webp" alt="Hack The Box" loading="lazy" class="max-h-28 w-auto object-contain" />
+          <div class="w-full h-40 flex items-center justify-center border-b border-white/5 p-4 bg-[#050911]">
+            <img src="/picture/logos/logo_htb.webp" alt="Hack The Box" loading="lazy" class="max-h-24 w-auto object-contain" />
           </div>
-          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1">
-            <p class="mb-3 text-[var(--ink-soft)] flex-1">Mi perfil en <span class="hl" style="background:#9fef00;color:#0a0e15">Hack The Box</span>: máquinas comprometidas, retos y progreso en hacking ético.</p>
-            <span class="bar-title" style="background:#9fef00;color:#0a0e15">▸ Ver mi perfil</span>
+          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
+            <p class="mb-3 text-slate-300 flex-1">Mi perfil en <span class="hl" style="background:rgba(159,239,0,0.12);color:#9fef00;border-bottom:1px solid rgba(159,239,0,0.3)">Hack The Box</span>: máquinas comprometidas, retos y progreso en hacking ético.</p>
+            <span class="bar-title bar-title--htb">▸ Ver perfil HTB</span>
           </div>
         </a>
 
         <!-- Write-ups (toda la tarjeta es enlace) -->
         <a
           href="/writeups"
-          class="win overflow-hidden flex flex-col"
+          class="win overflow-hidden flex flex-col group"
         >
           <div class="win-bar" style="background:#000;color:#9fef00">
-            <span class="scramble">WRITE-UPS</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
+            <span class="scramble">Write-ups // Terminal</span>
+            <span class="text-[9px] text-[#9fef00]/80 font-mono">[Archivos]</span>
           </div>
-          <div class="w-full h-40 border-b-2 border-[var(--ink)] p-4 font-mono text-[12px] leading-[1.55] overflow-hidden" style="background:#000">
-            <div><span style="color:#6a6a72">yokonad@htb</span>:<span style="color:#4d9fff">~</span>$ <span style="color:#9fef00">whoami</span></div>
-            <div style="color:var(--cream)">yokonad</div>
-            <div><span style="color:#6a6a72">yokonad@htb</span>:<span style="color:#4d9fff">~</span>$ <span style="color:#9fef00">ls</span> ~/writeups</div>
-            <div style="color:var(--cream)">{writeupNames.join('  ')}</div>
-            <div><span style="color:#6a6a72">yokonad@htb</span>:<span style="color:#4d9fff">~</span>$ <span class="term-cursor"></span></div>
+          <div class="w-full h-40 border-b border-white/5 p-4 font-mono text-[12px] leading-[1.55] overflow-hidden" style="background:#000">
+            <div><span style="color:#64748b">y0konad@htb</span>:<span style="color:#38bdf8">~</span>$ <span style="color:#9fef00">whoami</span></div>
+            <div style="color:#f8fafc">y0konad</div>
+            <div><span style="color:#64748b">y0konad@htb</span>:<span style="color:#38bdf8">~</span>$ <span style="color:#9fef00">ls</span> ~/writeups</div>
+            <div style="color:#38bdf8">{writeupNames.join('  ')}</div>
+            <div><span style="color:#64748b">y0konad@htb</span>:<span style="color:#38bdf8">~</span>$ <span class="term-cursor"></span></div>
           </div>
-          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1">
-            <p class="mb-3 text-[var(--ink-soft)] flex-1">Mis <span class="hl" style="background:#9fef00;color:#0a0e15">write-ups</span> de máquinas y retos: reconocimiento, explotación y escalada de privilegios.</p>
-            <span class="bar-title" style="background:#9fef00;color:#0a0e15">▸ Ver write-ups</span>
+          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
+            <p class="mb-3 text-slate-300 flex-1">Mis <span class="hl" style="background:rgba(159,239,0,0.12);color:#9fef00;border-bottom:1px solid rgba(159,239,0,0.3)">write-ups</span> de máquinas y retos: reconocimiento, explotación y escalada de privilegios.</p>
+            <span class="bar-title bar-title--htb">▸ Ver write-ups</span>
           </div>
         </a>
       </div>
     </section>
 
-    <!-- ═══════════ 4 · ACTIVIDAD · GITHUB ═══════════ -->
+    <!-- ═══════════ 5 · ACTIVIDAD · GITHUB ═══════════ -->
     <section class="space-y-4">
-      <div class="section-label">// Actividad · GitHub</div>
+      <div class="section-label">// Actividad en GitHub</div>
       <div class="grid gap-3 md:grid-cols-[4fr_1fr]">
         <div class="win">
           <div class="win-bar is-ink">
-            <span class="scramble">GITHUB.ACTIVITY</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
+            <span class="scramble text-slate-200">GitHub // y0konad</span>
+            <span class="text-[9px] text-slate-400 font-mono">[Live]</span>
           </div>
-          <div class="p-3">
-            <div class="flex items-center justify-between mb-2">
-              <a href="https://github.com/Yokonad" target="_blank" rel="noopener noreferrer" class="text-[11px] font-bold uppercase tracking-widest">yokonad</a>
-              <span id="gh-total" class="text-[10px] text-[var(--ink-soft)]">…</span>
+          <div class="p-3.5">
+            <div class="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
+              <a href="https://github.com/y0konad" target="_blank" rel="noopener noreferrer" class="text-[11px] font-bold uppercase tracking-widest text-white hover:text-[#39d353] flex items-center gap-1.5 transition-colors font-mono">
+                <span class="text-[#39d353]">&gt;</span> y0konad
+              </a>
+              <span id="gh-total" class="text-[11px] text-slate-300 font-mono font-medium tabular-nums">Cargando datos…</span>
             </div>
-            <div id="gh-cal" class="overflow-x-auto pb-1">
-              <div class="text-[11px] text-[var(--ink-soft)] py-6 text-center">Cargando contribuciones…</div>
+            <div id="gh-cal" class="overflow-x-auto pb-2 scrollbar-thin">
+              <div class="text-[11px] text-slate-400 py-6 text-center font-mono">Cargando contribuciones reales desde GitHub API…</div>
             </div>
-            <div class="flex items-center justify-end gap-1 mt-2 text-[9px] text-[var(--ink-soft)]">
-              <span class="mr-1">Menos</span>
-              <span class="gh-cell" style="background:rgba(244,244,245,0.10)"></span>
-              <span class="gh-cell" style="background:#9be9a8"></span>
-              <span class="gh-cell" style="background:#40c463"></span>
-              <span class="gh-cell" style="background:#30a14e"></span>
-              <span class="gh-cell" style="background:#216e39"></span>
-              <span class="ml-1">Más</span>
+            <div class="flex items-center justify-between mt-2 pt-2 border-t border-white/5 text-[9px] text-slate-400 font-mono">
+              <span class="text-slate-500 tracking-wider">HISTORIAL DE COMMITS (365 DÍAS)</span>
+              <div class="flex items-center gap-1.5">
+                <span class="mr-1 text-slate-400">Menos</span>
+                <span class="gh-cell" style="background:rgba(255,255,255,0.06)" title="0 contribuciones"></span>
+                <span class="gh-cell" style="background:#0e4429" title="Nivel 1"></span>
+                <span class="gh-cell" style="background:#006d32" title="Nivel 2"></span>
+                <span class="gh-cell" style="background:#26a641" title="Nivel 3"></span>
+                <span class="gh-cell" style="background:#39d353" title="Nivel 4"></span>
+                <span class="ml-1 text-slate-400">Más</span>
+              </div>
             </div>
           </div>
         </div>
@@ -372,137 +369,42 @@ const tagStyle = (t) => {
             src="https://media.tenor.com/P3SQJ4JbHOsAAAAd/tying-the-knot-with-an-amagami-sister-%E7%94%98%E7%A5%9E%E3%81%95%E3%82%93%E3%81%A1%E3%81%AE%E7%B8%81%E7%B5%90%E3%81%B3.gif"
             alt="Amagami-san Chi no Enmusubi"
             loading="lazy"
-            class="absolute inset-0 w-full h-full object-cover"
+            class="absolute inset-0 w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity"
           />
         </div>
       </div>
     </section>
 
-    <!-- ═══════════ 5 · INFORMACIÓN ═══════════ -->
-    <section class="space-y-4">
-      <div class="section-label">// Información</div>
-      <div class="grid gap-3 md:grid-cols-3">
-        <!-- Ciberataques -->
-        <div class="win flex flex-col">
-          <div class="win-bar" style="background:#c0392b">
-            <span class="scramble">THREAT.LIVE</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
-          </div>
-          <div class="p-4 flex-1 flex flex-col items-center justify-center text-center min-h-[120px]">
-            <span class="text-[9px] uppercase tracking-widest mb-2">Ataques a sitios web (2026)</span>
-            <span id="cyber-count" class="text-xl sm:text-2xl font-bold tabular-nums" style="color:#c0392b">0</span>
-            <span class="text-[8px] mt-1.5 text-[var(--ink-soft)]">~2,200/seg · Cybersecurity Ventures</span>
-          </div>
-        </div>
-
-        <!-- Go-Tōbun -->
-        <div class="win flex flex-col">
-          <div class="win-bar" style="background:linear-gradient(135deg,#E8845C,#EB7B94,#5DBAE0,#F3C553,#59C196)">
-            <span class="scramble">MANGA.HIATUS</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
-          </div>
-          <div class="p-4 flex-1 flex flex-col items-center justify-center text-center min-h-[120px]">
-            <span class="text-[9px] uppercase tracking-widest mb-1">Sin nuevo capítulo de</span>
-            <span class="text-[11px] font-bold mb-1.5">Go-Tōbun no Hanayome</span>
-            <div id="quint" class="flex flex-wrap justify-center items-end gap-1 text-[var(--violet-deep)]">…</div>
-            <span class="text-[8px] mt-1.5 text-[var(--ink-soft)]">Cap. #122 — 19 Feb 2020</span>
-          </div>
-        </div>
-
-        <!-- Barça -->
-        <div class="win flex flex-col">
-          <div class="win-bar" style="background:#4d6bf2">
-            <span class="scramble">FUTBOL.LOG</span>
-            <span class="win-btns"><i></i><i></i><i></i></span>
-          </div>
-          <div id="barca" class="p-4 flex-1 flex flex-col items-center justify-center text-center min-h-[120px]">
-            <span class="text-[11px] text-[var(--ink-soft)]">Cargando…</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ 6 · COMUNIDADES ═══════════ -->
-    <section class="space-y-4">
-      <div class="section-label">// Comunidades</div>
-      <div class="grid gap-3 md:grid-cols-2">
-        <!-- KoroSoft Community -->
-        <div class="win overflow-hidden flex flex-col">
-          <div class="win-bar" style="background:var(--korosoft)"><span class="scramble">KoroSoft Community</span><span class="win-btns"><i></i><i></i><i></i></span></div>
-          <div class="w-full h-40 flex items-center justify-center gap-3 sm:gap-4 border-b-2 border-[var(--ink)] p-4" style="background:linear-gradient(135deg,#2a1a6b,#6b4fd6)">
-            <img src="/picture/logos/linux-svgrepo-com.webp" alt="Tux" loading="lazy" class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 object-contain" />
-            <span class="display text-3xl sm:text-4xl uppercase tracking-wider text-white" style="text-shadow:2px 2px 0 rgba(0,0,0,0.4)">KoroSoft</span>
-          </div>
-          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1">
-            <p class="mb-2">Un espacio para <span class="hl">construir software</span> y experimentar con agentes de IA.</p>
-            <p class="mb-3 text-[var(--ink-soft)] flex-1">{comunidad.description}</p>
-            <a
-              href={comunidad.discordLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="bar-title hover:brightness-110 transition-all text-center"
-            >
-              ▸ Únete al Discord
-            </a>
-          </div>
-        </div>
-
-        <!-- CyberSen -->
-        <div class="win overflow-hidden flex flex-col">
-          <div class="win-bar" style="background:#c1121f"><span class="scramble">CyberSen</span><span class="win-btns"><i></i><i></i><i></i></span></div>
-          <div class="w-full h-40 flex items-center justify-center border-b-2 border-[var(--ink)] p-4" style="background:linear-gradient(135deg,#6a040f,#d62828)">
-            <img src="/picture/logos/cybersen-logo-blanco.webp" alt="CyberSen" loading="lazy" class="max-h-24 w-auto object-contain" />
-          </div>
-          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1">
-            <p class="mb-2"><span style="background:#d62828;color:#fff5f5;padding:0.02em 0.2em;font-weight:700">Hacking ético · CTF</span></p>
-            <p class="mb-3 text-[var(--ink-soft)] flex-1">
-              Grupo académico dedicado al hacking ético: CTF, talleres e investigación colaborativa.
-              Aquí nadie es experto absoluto, solo gente comprometida con aprender, equivocarse e iterar.
-            </p>
-            <a
-              href="https://cybersen.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="border-2 border-[var(--ink)] text-center font-bold uppercase tracking-[0.18em] text-[0.74rem] py-[0.4rem] px-[0.7rem] transition-colors hover:brightness-110"
-              style="background:#d62828;color:#fff5f5"
-            >
-              ▸ Visitar CyberSen
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════ 7 · EQUIPO ═══════════ -->
+    <!-- ═══════════ 6 · EQUIPO ═══════════ -->
     <section class="space-y-5">
       <div class="section-label">// Equipo</div>
 
-      <div class="text-center">
-        <h2 class="scramble display text-3xl md:text-4xl uppercase">{teamName}</h2>
-        <div class="mt-2 flex items-center justify-center gap-2 text-[var(--ink-soft)] text-xs">
+      <div class="text-center font-mono">
+        <h2 class="scramble display text-3xl md:text-4xl uppercase text-white">{teamName}</h2>
+        <div class="mt-2 flex items-center justify-center gap-2 text-slate-500 text-xs">
           <span>████████</span>
-          <span class="tracking-widest">•••</span>
+          <span class="tracking-widest font-bold text-purple-400">•••</span>
           <span>████████</span>
         </div>
-        <p class="mt-3 text-[13px] leading-relaxed max-w-2xl mx-auto border-2 border-[var(--ink)] bg-[var(--panel)] px-4 py-3 shadow-[3px_3px_0_rgba(244,244,245,0.2)]">{teamDescription}</p>
+        <p class="mt-3 text-[13px] leading-relaxed max-w-2xl mx-auto rounded-[2px] border border-white/5 bg-[#050911] px-4 py-3 text-slate-300">{teamDescription}</p>
       </div>
 
       <div class="grid gap-3 sm:grid-cols-3">
         {
           team.map((m) => (
-            <div class="win p-4 flex flex-col items-center text-center">
-              <div class="w-28 h-28 sm:w-32 sm:h-32 overflow-hidden border-2 border-[var(--ink)] mb-3 shrink-0">
+            <div class="win p-4 flex flex-col items-center text-center font-mono">
+              <div class="w-28 h-28 sm:w-32 sm:h-32 overflow-hidden rounded-[2px] border border-white/5 mb-3 shrink-0">
                 <img src={m.avatar} alt={m.name} loading="lazy" class="w-full h-full object-cover" />
               </div>
-              <p class="display text-[16px] text-[var(--ink)] leading-none">{m.name}</p>
-              <span class="inline-block mt-2 mb-2 px-3 py-0.5 text-[9px] uppercase tracking-widest font-bold border-2 border-[#e05a4f] text-[#ff8478] bg-[rgba(224,90,79,0.16)]">
+              <p class="display text-[16px] text-white leading-none">{m.name}</p>
+              <span class="inline-block mt-2 mb-2 px-3 py-0.5 text-[9px] uppercase tracking-widest font-bold rounded-[2px] border border-white/5 text-slate-300 bg-[#060e1c]">
                 {m.role}
               </span>
-              <hr class="dashrule w-10 mb-2.5" />
-              <p class="text-[11.5px] leading-snug text-[var(--ink-soft)] flex-1">{m.bio}</p>
+              <hr class="dashrule w-10 mb-2.5 opacity-40" />
+              <p class="text-[11.5px] leading-snug text-slate-300 flex-1">{m.bio}</p>
               <div class="flex flex-wrap justify-center gap-1.5 mt-3">
                 {m.tags.map((t) => (
-                  <span class="px-2 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={tagStyle(t)}>
+                  <span class="px-2 py-0.5 text-[9px] uppercase tracking-wide font-semibold rounded-[2px]" style={tagStyle(t)}>
                     {t}
                   </span>
                 ))}
@@ -511,75 +413,109 @@ const tagStyle = (t) => {
           ))
         }
       </div>
-
     </section>
 
-    <!-- ═══════════ 8 · PROYECTOS ═══════════ -->
+    <!-- ═══════════ 7 · COMUNIDADES ═══════════ -->
     <section class="space-y-4">
-      <div class="section-label">// Proyectos · Desarrollado por mí</div>
-      <div class="grid gap-3 sm:grid-cols-3">
-        {
-          projects.map((p) => (
-            <a href={p.url} target="_blank" rel="noopener noreferrer" class="win flex flex-col">
-              <div class="win-bar is-ink">
-                <span class="scramble">{p.title}</span>
-                <span class="win-btns"><i></i><i></i><i></i></span>
-              </div>
-              <div class="p-3 flex-1 flex flex-col">
-                <p class="text-[11.5px] leading-snug text-[var(--ink-soft)] flex-1">{p.description}</p>
-                <div class="flex flex-wrap gap-1.5 mt-3">
-                  {p.tags.map((t) => (
-                    <span class="px-2 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={tagStyle(t)}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <span class="mt-3 text-[11px] font-bold text-[var(--violet-deep)]">Ver en GitHub →</span>
-              </div>
+      <div class="section-label">// Comunidades</div>
+      <div class="grid gap-3 md:grid-cols-2">
+        <!-- KoroSoft Community -->
+        <div class="win overflow-hidden flex flex-col group">
+          <div class="win-bar" style="background:#061424;color:#7dd3fc">
+            <span class="scramble">KoroSoft Community</span>
+            <span class="text-[9px] font-mono text-sky-300">[Discord]</span>
+          </div>
+          <div class="w-full h-40 flex items-center justify-center gap-3 sm:gap-4 border-b border-white/5 p-4 bg-[#030a14]">
+            <img src="/picture/logos/linux-svgrepo-com.webp" alt="Tux" loading="lazy" class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 object-contain" />
+            <span class="display text-3xl sm:text-4xl uppercase tracking-wider text-white">KoroSoft</span>
+          </div>
+          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
+            <p class="mb-2 text-slate-200">Un espacio para <span class="hl">construir software</span> y experimentar con agentes de IA.</p>
+            <p class="mb-3 text-slate-400 flex-1">{comunidad.description}</p>
+            <a
+              href={comunidad.discordLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bar-title bar-title--blue text-center"
+            >
+              ▸ Únete al Discord
             </a>
-          ))
-        }
+          </div>
+        </div>
+
+        <!-- CyberSen -->
+        <div class="win overflow-hidden flex flex-col group">
+          <div class="win-bar" style="background:#1a0505;color:#fca5a5">
+            <span class="scramble">CyberSen</span>
+            <span class="text-[9px] font-mono text-rose-300">[Académico]</span>
+          </div>
+          <div class="w-full h-40 flex items-center justify-center border-b border-white/5 p-4 bg-[#120404]">
+            <img src="/picture/logos/cybersen-logo-blanco.webp" alt="CyberSen" loading="lazy" class="max-h-24 w-auto object-contain" />
+          </div>
+          <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
+            <p class="mb-2"><span style="background:rgba(239,68,68,0.15);color:#fca5a5;border-bottom:1px solid rgba(239,68,68,0.3);padding:0.02em 0.2em;font-weight:700">Hacking ético · CTF</span></p>
+            <p class="mb-3 text-slate-400 flex-1">
+              Grupo académico dedicado al hacking ético: CTF, talleres e investigación colaborativa.
+              Aquí nadie es experto absoluto, solo gente comprometida con aprender, equivocarse e iterar.
+            </p>
+            <a
+              href="https://cybersen.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bar-title bar-title--red text-center"
+            >
+              ▸ Visitar CyberSen
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ═══════════ 9 · CITA (cierre) ═══════════ -->
-    <section class="relative mt-3 sm:mt-4 border-2 border-[var(--ink)] bg-[var(--panel)] p-5 sm:p-7">
-      <img
-        src="/picture/pins/monito-pin.webp"
-        alt="Yokonad pin"
-        loading="lazy"
-        class="absolute -top-7 -left-4 sm:-top-8 sm:-left-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[-10deg] drop-shadow-[3px_3px_0_rgba(244,244,245,0.3)] pointer-events-none"
-      />
-      <img
-        src="/picture/pins/claude-pin.webp"
-        alt="Claude pin"
-        loading="lazy"
-        class="absolute -top-7 -right-4 sm:-top-8 sm:-right-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[10deg] drop-shadow-[3px_3px_0_rgba(244,244,245,0.3)] pointer-events-none"
-      />
-      <img
-        src="/picture/pins/ninja-pin.webp"
-        alt="Ninja pin"
-        loading="lazy"
-        class="absolute -bottom-7 -right-4 sm:-bottom-8 sm:-right-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[-8deg] drop-shadow-[3px_3px_0_rgba(244,244,245,0.3)] pointer-events-none"
-      />
-      <img
-        src="/picture/pins/badusb-pin.webp"
-        alt="BadUSB pin"
-        loading="lazy"
-        class="absolute -bottom-7 -left-4 sm:-bottom-8 sm:-left-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[8deg] drop-shadow-[3px_3px_0_rgba(244,244,245,0.3)] pointer-events-none"
-      />
-      <img
-        src="/picture/pins/infected-pin.webp"
-        alt="Infected pin"
-        loading="lazy"
-        class="absolute -top-8 sm:-top-9 left-1/2 -translate-x-1/2 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[4deg] drop-shadow-[3px_3px_0_rgba(244,244,245,0.3)] pointer-events-none"
-      />
-      <div class="pt-6 h-[180px] flex items-center justify-center text-center overflow-hidden">
-        <p id="cita-frase" class="display text-[16px] sm:text-[24px] uppercase leading-snug text-[var(--ink)] max-w-xl"></p>
+    <!-- ═══════════ 8 · INFORMACIÓN ═══════════ -->
+    <section class="space-y-4">
+      <div class="section-label">// Información</div>
+      <div class="grid gap-3 md:grid-cols-3">
+        <!-- Ciberataques -->
+        <div class="win flex flex-col">
+          <div class="win-bar" style="background:#1a0505;color:#f87171">
+            <span class="scramble">Ciberataques (2026)</span>
+            <span class="text-[9px] font-mono text-rose-400">[En vivo]</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col items-center justify-center text-center min-h-[120px] font-mono">
+            <span class="text-[9px] uppercase tracking-widest mb-2 text-slate-400">Ataques a sitios web (2026)</span>
+            <span id="cyber-count" class="text-xl sm:text-2xl font-bold tabular-nums text-rose-400">0</span>
+            <span class="text-[8px] mt-1.5 text-slate-500">~2,200/seg · Cybersecurity Ventures</span>
+          </div>
+        </div>
+
+        <!-- Go-Tōbun -->
+        <div class="win flex flex-col">
+          <div class="win-bar" style="background:#130b26;color:#d8b4fe">
+            <span class="scramble">Go-Tōbun no Hanayome</span>
+            <span class="text-[9px] font-mono text-purple-300">[Manga]</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col items-center justify-center text-center min-h-[120px] font-mono">
+            <span class="text-[9px] uppercase tracking-widest mb-1 text-slate-400">Sin nuevo capítulo de</span>
+            <span class="text-[11px] font-bold mb-1.5 text-white">Go-Tōbun no Hanayome</span>
+            <div id="quint" class="flex flex-wrap justify-center items-end gap-1 text-purple-400 font-bold">…</div>
+            <span class="text-[8px] mt-1.5 text-slate-500">Cap. #122 — 19 Feb 2020</span>
+          </div>
+        </div>
+
+        <!-- Barça -->
+        <div class="win flex flex-col">
+          <div class="win-bar" style="background:#08132e;color:#93c5fd">
+            <span class="scramble">FC Barcelona</span>
+            <span class="text-[9px] font-mono text-blue-300">[Último partido]</span>
+          </div>
+          <div id="barca" class="p-4 flex-1 flex flex-col items-center justify-center text-center min-h-[120px] font-mono">
+            <span class="text-[11px] text-slate-400">Cargando datos…</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ═══════════ 10 · MÚSICA ═══════════ -->
+    <!-- ═══════════ 9 · MÚSICA ═══════════ -->
     <section class="space-y-4">
       <div class="section-label">// Música</div>
 
@@ -591,15 +527,15 @@ const tagStyle = (t) => {
               <path
                 d="M 60 135 A 320 80 0 1 0 700 135 A 320 80 0 1 0 60 135"
                 fill="none"
-                stroke="rgba(255,255,255,0.65)"
-                stroke-width="2.5"
+                stroke="rgba(255,255,255,0.12)"
+                stroke-width="2"
                 stroke-dasharray="5 7"
               />
             </svg>
             {
               tracks.map((t, i) => (
                 <div class="orbit-item" style={`animation-delay:-${((i / tracks.length) * 77).toFixed(2)}s`}>
-                  <div class="orbit-frame">
+                  <div class="orbit-frame rounded-[2px] border-white/10">
                     <img src={`https://i.ytimg.com/vi/${t.id}/hqdefault.jpg`} alt="" loading="lazy" draggable="false" />
                   </div>
                 </div>
@@ -612,16 +548,16 @@ const tagStyle = (t) => {
       <!-- Playlist a todo el ancho (auto-alterna la canción) -->
       <div class="win">
         <div class="win-bar">
-          <span class="scramble">Playlist</span>
-          <span class="win-btns"><i></i><i></i><i></i></span>
+          <span class="scramble text-slate-200">Playlist // Canciones</span>
+          <span class="text-[9px] font-mono text-slate-400">[8 TRACKS]</span>
         </div>
         <div class="pl-viewport">
-          <ul id="playlist" class="text-[12px]">
+          <ul id="playlist" class="text-[12px] font-mono">
             {
               tracks.map((t) => (
-                <li class="pl-row flex items-center gap-3 px-3 py-2.5">
-                  <span class="pl-mark w-4 text-center text-[var(--ink)]">▶</span>
-                  <span class="flex-1 min-w-0 truncate"><span class="font-semibold">{t.artist}</span> — {t.title}</span>
+                <li class="pl-row flex items-center gap-3 px-3.5 py-2.5">
+                  <span class="pl-mark w-4 text-center text-purple-400">▶</span>
+                  <span class="flex-1 min-w-0 truncate text-slate-300"><span class="font-semibold text-white">{t.artist}</span> — {t.title}</span>
                 </li>
               ))
             }
@@ -630,13 +566,83 @@ const tagStyle = (t) => {
       </div>
     </section>
 
+    <!-- ═══════════ 10 · CITA ═══════════ -->
+    <section class="relative mt-3 sm:mt-4 rounded-[2px] border border-white/5 bg-[#050911] p-5 sm:p-7">
+      <img
+        src="/picture/pins/monito-pin.webp"
+        alt="y0konad pin"
+        loading="lazy"
+        class="absolute -top-7 -left-4 sm:-top-8 sm:-left-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[-10deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
+      />
+      <img
+        src="/picture/pins/claude-pin.webp"
+        alt="Claude pin"
+        loading="lazy"
+        class="absolute -top-7 -right-4 sm:-top-8 sm:-right-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[10deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
+      />
+      <img
+        src="/picture/pins/ninja-pin.webp"
+        alt="Ninja pin"
+        loading="lazy"
+        class="absolute -bottom-7 -right-4 sm:-bottom-8 sm:-right-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[-8deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
+      />
+      <img
+        src="/picture/pins/badusb-pin.webp"
+        alt="BadUSB pin"
+        loading="lazy"
+        class="absolute -bottom-7 -left-4 sm:-bottom-8 sm:-left-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[8deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
+      />
+      <img
+        src="/picture/pins/infected-pin.webp"
+        alt="Infected pin"
+        loading="lazy"
+        class="absolute -top-8 sm:-top-9 left-1/2 -translate-x-1/2 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[4deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
+      />
+      <div class="pt-6 h-[180px] flex items-center justify-center text-center overflow-hidden font-mono">
+        <p id="cita-frase" class="display text-[16px] sm:text-[24px] uppercase leading-snug text-white max-w-xl"></p>
+      </div>
+    </section>
+
+    <!-- ═══════════ 11 · CONTACTO ═══════════ -->
+    <section class="space-y-4">
+      <div class="section-label">// Contacto</div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        {
+          profile.links.map((link) => {
+            const cfg = linkConfig[link.label] || { path: null };
+            const handle =
+              link.label === 'Discord'
+                ? 'y0konad'
+                : link.url.replace('mailto:', '').replace('https://', '').replace('www.', '');
+            return (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-3.5 rounded-[2px] border border-white/5 bg-[#050911] p-3.5 transition-colors duration-150 hover:border-white/15 hover:bg-[#080e1a]"
+              >
+                {cfg.path && (
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 shrink-0 text-white transition-opacity group-hover:opacity-90">
+                    <path d={cfg.path} />
+                  </svg>
+                )}
+                <span class="flex-1 min-w-0 font-mono">
+                  <span class="block text-[12.5px] font-bold uppercase tracking-[0.14em] text-white group-hover:text-purple-400 transition-colors">{link.label}</span>
+                  <span class="block text-[11px] text-slate-400 truncate">{handle}</span>
+                </span>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+
     <!-- ═══════════ BARRA INFERIOR ═══════════ -->
-    <footer class="flex flex-wrap items-center justify-between gap-2 border-2 border-[var(--ink)] bg-[var(--violet)] px-3 py-2.5 text-[var(--cream)]">
-      <span class="text-[9px] sm:text-[12px] font-bold tracking-[0.12em] uppercase">YOKONAD | ISSUE 001 | PORTAFOLIO</span>
-      <span class="hidden md:flex gap-1 text-[#9c978b]">
+    <footer class="flex flex-wrap items-center justify-between gap-2 rounded-[2px] border border-white/5 bg-[#040711]/95 px-3 sm:px-4 py-3 text-slate-300 font-mono">
+      <span class="text-[10px] sm:text-[12px] font-semibold tracking-[0.12em] uppercase text-slate-300">// y0konad · portafolio</span>
+      <span class="hidden md:flex gap-1.5 text-slate-600">
         {Array.from({ length: 14 }).map(() => <span>●</span>)}
       </span>
-      <a href="/" class="text-[9px] sm:text-[12px] font-bold tracking-[0.12em] text-[var(--cream)]">yokonad.dev</a>
     </footer>
   </div>
 
@@ -710,123 +716,80 @@ const tagStyle = (t) => {
       titles.forEach(function (el) { io.observe(el); });
     })();
 
-    // ── Calendario de contribuciones de GitHub ──
+    // ── Calendario de contribuciones reales de GitHub (Verde Oficial GitHub) ──
     (function () {
       var cal = document.getElementById('gh-cal');
       var totalEl = document.getElementById('gh-total');
       if (!cal) return;
-      var LEVELS = ['rgba(244,244,245,0.10)', '#9be9a8', '#40c463', '#30a14e', '#216e39'];
-      fetch('https://github-contributions-api.jogruber.de/v4/Yokonad?y=last')
-        .then(function (r) { return r.json(); })
+
+      var LEVELS = ['rgba(255,255,255,0.06)', '#0e4429', '#006d32', '#26a641', '#39d353'];
+
+      fetch('https://github-contributions-api.jogruber.de/v4/y0konad?y=last')
+        .then(function (r) {
+          if (!r.ok) throw new Error('Network error');
+          return r.json();
+        })
         .then(function (data) {
           var c = data.contributions || [];
-          if (!c.length) { cal.innerHTML = '<div class="text-[11px] py-6 text-center text-[var(--ink-soft)]">Sin datos</div>'; return; }
+          if (!c.length) {
+            cal.innerHTML = '<div class="text-[11px] py-6 text-center text-slate-400 font-mono">[Sin datos de telemetría]</div>';
+            return;
+          }
+
           var weeks = [], cur = [];
           var startDay = new Date(c[0].date).getDay();
           for (var i = 0; i < startDay; i++) cur.push(null);
-          c.forEach(function (d) { cur.push(d); if (cur.length === 7) { weeks.push(cur); cur = []; } });
-          if (cur.length) { while (cur.length < 7) cur.push(null); weeks.push(cur); }
+          c.forEach(function (d) {
+            cur.push(d);
+            if (cur.length === 7) {
+              weeks.push(cur);
+              cur = [];
+            }
+          });
+          if (cur.length) {
+            while (cur.length < 7) cur.push(null);
+            weeks.push(cur);
+          }
 
           var wrap = document.createElement('div');
           wrap.className = 'gh-grid';
-          var grid = [];
+
           weeks.forEach(function (w) {
             var col = document.createElement('div');
             col.className = 'gh-week';
-            var colCells = [];
             w.forEach(function (d) {
               var level = d ? (d.level || 0) : 0;
               var cell = document.createElement('span');
               cell.className = 'gh-cell';
               cell.style.background = LEVELS[level];
-              if (d) cell.title = d.date + ': ' + d.count;
+              if (d) {
+                var commitLabel = d.count === 1 ? '1 contribución' : d.count + ' contribuciones';
+                cell.title = d.date + ' — ' + commitLabel;
+                cell.setAttribute('aria-label', d.date + ': ' + commitLabel);
+              }
               col.appendChild(cell);
-              colCells.push({ el: cell, level: level });
             });
             wrap.appendChild(col);
-            grid.push(colCells);
           });
+
           cal.innerHTML = '';
           cal.appendChild(wrap);
-          if (totalEl) totalEl.textContent = ((data.total && data.total.lastYear) || c.length) + ' contribuciones';
 
-          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          if (!reduce) startSnake(grid, LEVELS);
+          var totalSum = 0;
+          if (data.total && typeof data.total.lastYear === 'number') {
+            totalSum = data.total.lastYear;
+          } else {
+            c.forEach(function (d) { totalSum += (d.count || 0); });
+          }
+
+          if (totalEl) {
+            totalEl.textContent = totalSum.toLocaleString() + ' contribuciones en el último año';
+          }
         })
-        .catch(function () { cal.innerHTML = '<div class="text-[11px] py-6 text-center text-[var(--ink-soft)]">No se pudieron cargar</div>'; });
-
-      // ── Snake que recorre y "come" las contribuciones (auto, en bucle) ──
-      function startSnake(grid, LEVELS) {
-        var cols = grid.length, rows = 7;
-        var mobile = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
-        var path = [];
-        if (mobile) {
-          // Móvil: la cuadrícula está transpuesta en 2 super-columnas (ver CSS).
-          // El snake baja por cada super-columna, semana a semana, en zigzag por días.
-          var PER_COL = 27;
-          for (var b = 0; b < 2; b++) {
-            var s = b * PER_COL, e = Math.min(s + PER_COL, cols);
-            for (var w = s; w < e; w++) {
-              var lr = w - s;
-              if (lr % 2 === 0) { for (var d = 0; d < rows; d++) path.push([w, d]); }
-              else { for (var d2 = rows - 1; d2 >= 0; d2--) path.push([w, d2]); }
-            }
-          }
-        } else {
-          for (var c = 0; c < cols; c++) {
-            if (c % 2 === 0) { for (var r = 0; r < rows; r++) path.push([c, r]); }
-            else { for (var r2 = rows - 1; r2 >= 0; r2--) path.push([c, r2]); }
-          }
-        }
-        var BODY = 7;
-        var SNAKE = '#c8c8d2';
-        var HEAD = '#f4f4f5';
-        var eaten = {};
-
-        // Bucle infinito sin cortes: se concatena la IDA (come las verdes) con la
-        // VUELTA (las devuelve en reversa). Como el final de la ida y el inicio de
-        // la vuelta son la misma celda, la cabeza nunca salta y el ciclo se repite solo.
-        var seq = [];
-        for (var f = 0; f < path.length; f++) seq.push({ p: path[f], eat: true });
-        for (var g = path.length - 1; g >= 0; g--) seq.push({ p: path[g], eat: false });
-        var LEN = seq.length;
-        var s = 0;
-        var visible = false, running = false;
-
-        function origBg(p) {
-          return eaten[p[0] * 100 + p[1]] ? LEVELS[0] : LEVELS[grid[p[0]][p[1]].level];
-        }
-        function color(p, bg) {
-          var cell = grid[p[0]] && grid[p[0]][p[1]];
-          if (cell) cell.el.style.background = bg;
-        }
-        function step() {
-          if (!visible) { running = false; return; }
-          var head = seq[s];
-          var p = head.p;
-          // La cabeza COME en la ida y DEVUELVE en la vuelta (solo las celdas con verde)
-          if (grid[p[0]][p[1]].level > 0) {
-            if (head.eat) eaten[p[0] * 100 + p[1]] = true;
-            else delete eaten[p[0] * 100 + p[1]];
-          }
-          // Cola: la celda que deja el cuerpo recupera su fondo real (gris si comida, verde si devuelta)
-          var tp = seq[(s - BODY + LEN) % LEN].p;
-          color(tp, origBg(tp));
-          // Cuerpo
-          for (var b = BODY - 1; b >= 1; b--) color(seq[(s - b + LEN) % LEN].p, SNAKE);
-          // Cabeza al final, para que gane en los pliegues de los extremos
-          color(p, HEAD);
-
-          s = (s + 1) % LEN;
-          // Pausa breve al llegar a cada extremo (todo comido / todo devuelto)
-          var turn = (s === 0 || s === path.length);
-          setTimeout(step, turn ? 650 : 45);
-        }
-        // Solo anima mientras la sección de GitHub está en pantalla
-        onVisible(cal,
-          function () { visible = true; if (!running) { running = true; step(); } },
-          function () { visible = false; });
-      }
+        .catch(function () {
+          cal.innerHTML = '<div class="text-[11px] py-6 text-center text-slate-400 font-mono">[Error al conectar con la API de GitHub]</div>';
+          if (totalEl) totalEl.textContent = 'Modo offline';
+        });
     })();
 
     // ── Contador de ciberataques en vivo ──
@@ -866,8 +829,8 @@ const tagStyle = (t) => {
         var vals = [Y, Mo, D, pad(H), pad(Mi), pad(S)];
         var html = '';
         for (var i = 0; i < 6; i++) {
-          html += '<div class="text-center"><span class="block text-base sm:text-lg font-bold leading-none">' + vals[i] + '</span><span class="text-[7px] uppercase tracking-widest text-[var(--ink-soft)]">' + labels[i] + '</span></div>';
-          if (i < 5) html += '<span class="text-sm leading-none">:</span>';
+          html += '<div class="text-center"><span class="block text-base sm:text-lg font-bold leading-none text-purple-400">' + vals[i] + '</span><span class="text-[7px] uppercase tracking-widest text-slate-400">' + labels[i] + '</span></div>';
+          if (i < 5) html += '<span class="text-sm leading-none text-slate-500">:</span>';
         }
         el.innerHTML = html;
       }
@@ -886,17 +849,17 @@ const tagStyle = (t) => {
         .then(function (r) { return r.json(); })
         .then(function (data) {
           var m = data.results && data.results[0];
-          if (!m) { box.innerHTML = '<span class="text-[11px] text-[var(--ink-soft)]">Sin datos</span>'; return; }
+          if (!m) { box.innerHTML = '<span class="text-[11px] text-slate-400 font-mono">[Sin datos]</span>'; return; }
           var badge = function (url) { return url ? '<img src="' + url + '" alt="" class="w-8 h-8 object-contain"/>' : ''; };
           box.innerHTML =
             '<div class="flex items-center gap-3 my-1">' +
-            '<div class="flex flex-col items-center gap-1">' + badge(m.strHomeTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold">' + m.strHomeTeam + '</span></div>' +
-            '<div class="flex items-center gap-2"><span class="text-2xl font-bold text-[var(--violet-deep)]">' + (m.intHomeScore || 0) + '</span><span class="text-lg">-</span><span class="text-2xl font-bold text-[var(--violet-deep)]">' + (m.intAwayScore || 0) + '</span></div>' +
-            '<div class="flex flex-col items-center gap-1">' + badge(m.strAwayTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold">' + m.strAwayTeam + '</span></div>' +
+            '<div class="flex flex-col items-center gap-1">' + badge(m.strHomeTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold text-white">' + m.strHomeTeam + '</span></div>' +
+            '<div class="flex items-center gap-2"><span class="text-2xl font-bold text-sky-400">' + (m.intHomeScore || 0) + '</span><span class="text-lg text-slate-400">-</span><span class="text-2xl font-bold text-sky-400">' + (m.intAwayScore || 0) + '</span></div>' +
+            '<div class="flex flex-col items-center gap-1">' + badge(m.strAwayTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold text-white">' + m.strAwayTeam + '</span></div>' +
             '</div>' +
-            '<span class="text-[8px] text-[var(--ink-soft)]">' + (m.strVenue || '') + ' — ' + (m.strStatus || 'FT') + '</span>';
+            '<span class="text-[8px] text-slate-400">' + (m.strVenue || '') + ' — ' + (m.strStatus || 'FT') + '</span>';
         })
-        .catch(function () { box.innerHTML = '<span class="text-[11px] text-[var(--ink-soft)]">Sin datos</span>'; });
+        .catch(function () { box.innerHTML = '<span class="text-[11px] text-slate-400 font-mono">[Sin datos]</span>'; });
     })();
 
     // ── Cita: frases reflexivas que rotan con scramble (en bucle) ──
