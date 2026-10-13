@@ -1,5 +1,16 @@
 import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import {
+  Vector2,
+  Scene,
+  OrthographicCamera,
+  PlaneGeometry,
+  ShaderMaterial,
+  Color,
+  Mesh,
+  WebGLRenderer,
+  SRGBColorSpace,
+  Clock,
+} from 'three';
 import './CRTWarp.css';
 
 const vertexShader = `
@@ -152,8 +163,8 @@ export default function CRTWarp({
   const rendererRef = useRef(null);
   const frameRef = useRef(null);
   const pausedRef = useRef(paused);
-  const pointerTargetRef = useRef(new THREE.Vector2(0, 0));
-  const pointerCurrentRef = useRef(new THREE.Vector2(0, 0));
+  const pointerTargetRef = useRef(new Vector2(0, 0));
+  const pointerCurrentRef = useRef(new Vector2(0, 0));
   const visibleRef = useRef(true);
   const fpsRef = useRef(fps);
   const lastFrameRef = useRef(0);
@@ -170,18 +181,18 @@ export default function CRTWarp({
     const container = containerRef.current;
     if (!container) return undefined;
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const geometry = new THREE.PlaneGeometry(2, 2);
-    const material = new THREE.ShaderMaterial({
+    const scene = new Scene();
+    const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    const geometry = new PlaneGeometry(2, 2);
+    const material = new ShaderMaterial({
       vertexShader,
       fragmentShader,
       uniforms: {
-        uResolution: { value: new THREE.Vector2(1, 1) },
+        uResolution: { value: new Vector2(1, 1) },
         uTime: { value: 0 },
         uSpeed: { value: speed },
-        uColor: { value: new THREE.Color(color) },
-        uBackgroundColor: { value: new THREE.Color(backgroundColor) },
+        uColor: { value: new Color(color) },
+        uBackgroundColor: { value: new Color(backgroundColor) },
         uCurvature: { value: curvature },
         uScanlineStrength: { value: scanlineStrength },
         uScanlineFrequency: { value: scanlineFrequency },
@@ -194,19 +205,19 @@ export default function CRTWarp({
         uBrightness: { value: brightness },
         uPixelation: { value: pixelation },
         uRgbShift: { value: rgbShift },
-        uPointer: { value: new THREE.Vector2(0, 0) },
+        uPointer: { value: new Vector2(0, 0) },
         uMouseStrength: { value: mouseStrength },
         uMouseReact: { value: mouseReact ? 1 : 0 }
       }
     });
     materialRef.current = material;
 
-    const mesh = new THREE.Mesh(geometry, material);
+    const mesh = new Mesh(geometry, material);
     scene.add(mesh);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'low-power' });
+    const renderer = new WebGLRenderer({ antialias: false, alpha: false, powerPreference: 'low-power' });
     rendererRef.current = renderer;
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.outputColorSpace = SRGBColorSpace;
     renderer.setPixelRatio(Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, dpr));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
@@ -225,7 +236,7 @@ export default function CRTWarp({
     resizeObserver.observe(container);
     resize();
 
-    const clock = new THREE.Clock();
+    const clock = new Clock();
     const visibilityObserver = new IntersectionObserver(([entry]) => {
       visibleRef.current = entry.isIntersecting;
     });

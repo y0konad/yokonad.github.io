@@ -21,12 +21,33 @@ export default function HeroTitle() {
 
   const activeMode = MODES[modeIndex];
 
-  // Rotación cíclica periódica cada 3.8 segundos
+  // Rotación cíclica periódica cada 3.8 segundos (se pausa si la pestaña está oculta)
   useEffect(() => {
-    const timer = setInterval(() => {
-      setModeIndex(prev => (prev + 1) % MODES.length);
-    }, 3800);
-    return () => clearInterval(timer);
+    let timer = null;
+    const start = () => {
+      if (!timer) {
+        timer = setInterval(() => {
+          setModeIndex(prev => (prev + 1) % MODES.length);
+        }, 3800);
+      }
+    };
+    const stop = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+    const onVisibilityChange = () => {
+      if (document.hidden) stop();
+      else start();
+    };
+
+    start();
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => {
+      stop();
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
   }, []);
 
   // Transmutación ultra-fluida: GSAP transmuta el contenido en vivo sin reemplazos bruscos de React
@@ -35,6 +56,15 @@ export default function HeroTitle() {
 
     if (isFirstRender.current) {
       isFirstRender.current = false;
+      return;
+    }
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      wordRef.current.textContent = activeMode.word;
       return;
     }
 

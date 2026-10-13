@@ -28,10 +28,10 @@ const techLogos = [
   { slug: 'python', title: 'Python', src: '/picture/logos/python.svg', color: '#3776AB' },
   { slug: 'css', title: 'CSS', color: '#A855F7' }, // Morado
   { slug: 'git', title: 'Git', color: '#F05032' },
-  { slug: 'java', title: 'Java / OpenJDK', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: '#E76F00' },
+  { slug: 'java', title: 'Java / OpenJDK', src: '/picture/logos/java.svg', color: '#E76F00' },
   { slug: 'tailwindcss', title: 'Tailwind', color: '#06B6D4' },
   { slug: 'html5', title: 'HTML', color: '#E34F26' },
-  { slug: 'linux', title: 'Linux', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', color: '#FCC624' },
+  { slug: 'linux', title: 'Linux', src: '/picture/logos/linux.svg', color: '#FCC624' },
   { slug: 'archlinux', title: 'Arch', color: '#1793D1' },
   { slug: 'ubuntu', title: 'Ubuntu', color: '#E95420' },
   { slug: 'go', title: 'Go', color: '#00ADD8' },
@@ -42,50 +42,50 @@ const techLogos = [
 
 // Canciones de la lista oficial de Spotify de y0konad (44 pistas de sus capturas)
 const tracks = [
-  { title: 'Khé?', artist: 'Rauw Alejandro & Romeo Santos', cover: '/picture/music/khe-rauw-alejandro.jpg' },
-  { title: 'Pasos de Gigantes', artist: 'Bacilos', cover: '/picture/music/pasos-de-gigantes.jpg' },
-  { title: 'DIME', artist: 'Bad Bunny', cover: '/picture/music/dime-bad-bunny.jpg' },
-  { title: 'LA PRIMERA', artist: 'Dillom', cover: '/picture/music/la-primera-dillom.jpg' },
-  { title: 'princess peach', artist: 'Young Miko', cover: '/picture/music/princess-peach.jpg' },
-  { title: 'Party In The U.S.A.', artist: 'Miley Cyrus', cover: '/picture/music/party-in-the-usa.jpg' },
-  { title: 'Welcome to the Black Parade', artist: 'My Chemical Romance', cover: '/picture/music/welcome-to-the-black-parade.jpg' },
-  { title: 'HOUSE OF LUX 2', artist: 'DannyLux', cover: '/picture/music/house-of-lux-2.jpg' },
-  { title: 'pa quererte', artist: 'Rels B', cover: '/picture/music/pa-quererte.jpg' },
-  { title: 'Romantic Homicide', artist: 'd4vd', cover: '/picture/music/romantic-homicide.jpg' },
-  { title: 'Contando Lunares', artist: 'Don Patricio & Cruz Cafuné', cover: '/picture/music/contando-lunares.jpg' },
-  { title: 'Qué Pasaría...', artist: 'Rauw Alejandro & Bad Bunny', cover: '/picture/music/que-pasaria.jpg' },
-  { title: 'SLOW DANCING IN THE DARK', artist: 'Joji', cover: '/picture/music/slow-dancing-in-the-dark.jpg' },
-  { title: 'Please Please Please', artist: 'Sabrina Carpenter', cover: '/picture/music/please-please-please.jpg' },
-  { title: 'Kill Bill', artist: 'SZA', cover: '/picture/music/kill-bill.jpg' },
-  { title: 'Lisa', artist: 'Young Miko', cover: '/picture/music/lisa-young-miko.jpg' },
-  { title: 'Glimpse of Us', artist: 'Joji', cover: '/picture/music/glimpse-of-us.jpg' },
-  { title: 'Aquel Nap ZzZz', artist: 'Rauw Alejandro', cover: '/picture/music/aquel-nap-zzzz.jpg' },
-  { title: 'Otro Atardecer', artist: 'Bad Bunny & The Marías', cover: '/picture/music/otro-atardecer.jpg' },
-  { title: 'EL CLúB', artist: 'Bad Bunny', cover: '/picture/music/el-club-bad-bunny.jpg' },
-  { title: 'miau', artist: 'Young Cister', cover: '/picture/music/miau-young-cister.jpg' },
-  { title: 'QUIZAS SI QUIZAS NO', artist: 'Álvaro Díaz & Quevedo', cover: '/picture/music/quizas-si-quizas-no.jpg' },
-  { title: 'Pretty Boy', artist: 'The Neighbourhood', cover: '/picture/music/pretty-boy-the-nbhd.jpg' },
-  { title: 'MORFEO', artist: 'WOS', cover: '/picture/music/morfeo-wos.jpg' },
-  { title: 'Niño Amor', artist: 'Axel Fiks', cover: '/picture/music/nino-amor-axel-fiks.jpg' },
-  { title: 'BUENOS AIRES', artist: 'Nathy Peluso', cover: '/picture/music/buenos-aires-nathy-peluso.jpg' },
-  { title: 'thank u, next', artist: 'Ariana Grande', cover: '/picture/music/thank-u-next.jpg' },
-  { title: 'Llori Pari', artist: 'Álvaro Díaz & Feid', cover: '/picture/music/llori-pari.jpg' },
-  { title: 'Francés Limón', artist: 'Los Enanitos Verdes', cover: '/picture/music/frances-limon.jpg' },
-  { title: 'Supermercado', artist: 'Mon Laferte', cover: '/picture/music/supermercado-mon-laferte.jpg' },
-  { title: 'CRUZ', artist: 'Trueno & Feid', cover: '/picture/music/cruz-trueno-feid.jpg' },
-  { title: 'Summer', artist: 'Good Kid', cover: '/picture/music/summer-good-kid.jpg' },
-  { title: "I'm Gone", artist: 'Oliver Tree', cover: '/picture/music/im-gone-oliver-tree.jpg' },
-  { title: 'Open Arms', artist: 'SZA feat. Travis Scott', cover: '/picture/music/open-arms-sza.jpg' },
-  { title: 'LADO A LADO', artist: 'Bhavi', cover: '/picture/music/lado-a-lado-bhavi.jpg' },
-  { title: 'Mariposa tecknicolor', artist: 'Fito Páez', cover: '/picture/music/mariposa-tecknicolor.jpg' },
-  { title: 'Adiós', artist: 'Gustavo Cerati', cover: '/picture/music/adios-cerati.jpg' },
-  { title: 'Indiana', artist: 'Hombres G', cover: '/picture/music/indiana-hombres-g.jpg' },
-  { title: 'Dar es dar', artist: 'Fito Páez', cover: '/picture/music/dar-es-dar.jpg' },
-  { title: 'Loco', artist: 'Andrés Calamaro', cover: '/picture/music/loco-calamaro.jpg' },
-  { title: '505', artist: 'Arctic Monkeys', cover: '/picture/music/505-arctic-monkeys.jpg' },
-  { title: 'Problemón', artist: 'Álvaro Díaz & Rauw Alejandro', cover: '/picture/music/problemon.jpg' },
-  { title: '220', artist: 'Dillom', cover: '/picture/music/220-dillom.jpg' },
-  { title: 'Yo No Soy Celoso', artist: 'Bad Bunny', cover: '/picture/music/yo-no-soy-celoso.jpg' },
+  { title: 'Khé?', artist: 'Rauw Alejandro & Romeo Santos', cover: '/picture/music/khe-rauw-alejandro.webp' },
+  { title: 'Pasos de Gigantes', artist: 'Bacilos', cover: '/picture/music/pasos-de-gigantes.webp' },
+  { title: 'DIME', artist: 'Bad Bunny', cover: '/picture/music/dime-bad-bunny.webp' },
+  { title: 'LA PRIMERA', artist: 'Dillom', cover: '/picture/music/la-primera-dillom.webp' },
+  { title: 'princess peach', artist: 'Young Miko', cover: '/picture/music/princess-peach.webp' },
+  { title: 'Party In The U.S.A.', artist: 'Miley Cyrus', cover: '/picture/music/party-in-the-usa.webp' },
+  { title: 'Welcome to the Black Parade', artist: 'My Chemical Romance', cover: '/picture/music/welcome-to-the-black-parade.webp' },
+  { title: 'HOUSE OF LUX 2', artist: 'DannyLux', cover: '/picture/music/house-of-lux-2.webp' },
+  { title: 'pa quererte', artist: 'Rels B', cover: '/picture/music/pa-quererte.webp' },
+  { title: 'Romantic Homicide', artist: 'd4vd', cover: '/picture/music/romantic-homicide.webp' },
+  { title: 'Contando Lunares', artist: 'Don Patricio & Cruz Cafuné', cover: '/picture/music/contando-lunares.webp' },
+  { title: 'Qué Pasaría...', artist: 'Rauw Alejandro & Bad Bunny', cover: '/picture/music/que-pasaria.webp' },
+  { title: 'SLOW DANCING IN THE DARK', artist: 'Joji', cover: '/picture/music/slow-dancing-in-the-dark.webp' },
+  { title: 'Please Please Please', artist: 'Sabrina Carpenter', cover: '/picture/music/please-please-please.webp' },
+  { title: 'Kill Bill', artist: 'SZA', cover: '/picture/music/kill-bill.webp' },
+  { title: 'Lisa', artist: 'Young Miko', cover: '/picture/music/lisa-young-miko.webp' },
+  { title: 'Glimpse of Us', artist: 'Joji', cover: '/picture/music/glimpse-of-us.webp' },
+  { title: 'Aquel Nap ZzZz', artist: 'Rauw Alejandro', cover: '/picture/music/aquel-nap-zzzz.webp' },
+  { title: 'Otro Atardecer', artist: 'Bad Bunny & The Marías', cover: '/picture/music/otro-atardecer.webp' },
+  { title: 'EL CLúB', artist: 'Bad Bunny', cover: '/picture/music/el-club-bad-bunny.webp' },
+  { title: 'miau', artist: 'Young Cister', cover: '/picture/music/miau-young-cister.webp' },
+  { title: 'QUIZAS SI QUIZAS NO', artist: 'Álvaro Díaz & Quevedo', cover: '/picture/music/quizas-si-quizas-no.webp' },
+  { title: 'Pretty Boy', artist: 'The Neighbourhood', cover: '/picture/music/pretty-boy-the-nbhd.webp' },
+  { title: 'MORFEO', artist: 'WOS', cover: '/picture/music/morfeo-wos.webp' },
+  { title: 'Niño Amor', artist: 'Axel Fiks', cover: '/picture/music/nino-amor-axel-fiks.webp' },
+  { title: 'BUENOS AIRES', artist: 'Nathy Peluso', cover: '/picture/music/buenos-aires-nathy-peluso.webp' },
+  { title: 'thank u, next', artist: 'Ariana Grande', cover: '/picture/music/thank-u-next.webp' },
+  { title: 'Llori Pari', artist: 'Álvaro Díaz & Feid', cover: '/picture/music/llori-pari.webp' },
+  { title: 'Francés Limón', artist: 'Los Enanitos Verdes', cover: '/picture/music/frances-limon.webp' },
+  { title: 'Supermercado', artist: 'Mon Laferte', cover: '/picture/music/supermercado-mon-laferte.webp' },
+  { title: 'CRUZ', artist: 'Trueno & Feid', cover: '/picture/music/cruz-trueno-feid.webp' },
+  { title: 'Summer', artist: 'Good Kid', cover: '/picture/music/summer-good-kid.webp' },
+  { title: "I'm Gone", artist: 'Oliver Tree', cover: '/picture/music/im-gone-oliver-tree.webp' },
+  { title: 'Open Arms', artist: 'SZA feat. Travis Scott', cover: '/picture/music/open-arms-sza.webp' },
+  { title: 'LADO A LADO', artist: 'Bhavi', cover: '/picture/music/lado-a-lado-bhavi.webp' },
+  { title: 'Mariposa tecknicolor', artist: 'Fito Páez', cover: '/picture/music/mariposa-tecknicolor.webp' },
+  { title: 'Adiós', artist: 'Gustavo Cerati', cover: '/picture/music/adios-cerati.webp' },
+  { title: 'Indiana', artist: 'Hombres G', cover: '/picture/music/indiana-hombres-g.webp' },
+  { title: 'Dar es dar', artist: 'Fito Páez', cover: '/picture/music/dar-es-dar.webp' },
+  { title: 'Loco', artist: 'Andrés Calamaro', cover: '/picture/music/loco-calamaro.webp' },
+  { title: '505', artist: 'Arctic Monkeys', cover: '/picture/music/505-arctic-monkeys.webp' },
+  { title: 'Problemón', artist: 'Álvaro Díaz & Rauw Alejandro', cover: '/picture/music/problemon.webp' },
+  { title: '220', artist: 'Dillom', cover: '/picture/music/220-dillom.webp' },
+  { title: 'Yo No Soy Celoso', artist: 'Bad Bunny', cover: '/picture/music/yo-no-soy-celoso.webp' },
 ];
 
 // Portadas locales y metadatos para la galería 3D (React Bits DomeGallery)
@@ -570,30 +570,45 @@ const tagStyle = (t) => {
         src="/picture/pins/monito-pin.webp"
         alt="y0konad pin"
         loading="lazy"
+        decoding="async"
+        width="68"
+        height="68"
         class="absolute -top-7 -left-4 sm:-top-8 sm:-left-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[-10deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
       />
       <img
         src="/picture/pins/claude-pin.webp"
         alt="Claude pin"
         loading="lazy"
+        decoding="async"
+        width="68"
+        height="68"
         class="absolute -top-7 -right-4 sm:-top-8 sm:-right-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[10deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
       />
       <img
         src="/picture/pins/ninja-pin.webp"
         alt="Ninja pin"
         loading="lazy"
+        decoding="async"
+        width="68"
+        height="68"
         class="absolute -bottom-7 -right-4 sm:-bottom-8 sm:-right-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[-8deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
       />
       <img
         src="/picture/pins/badusb-pin.webp"
         alt="BadUSB pin"
         loading="lazy"
+        decoding="async"
+        width="68"
+        height="68"
         class="absolute -bottom-7 -left-4 sm:-bottom-8 sm:-left-8 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[8deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
       />
       <img
         src="/picture/pins/infected-pin.webp"
         alt="Infected pin"
         loading="lazy"
+        decoding="async"
+        width="68"
+        height="68"
         class="absolute -top-8 sm:-top-9 left-1/2 -translate-x-1/2 z-20 w-[59px] h-[59px] sm:w-[68px] sm:h-[68px] object-contain rotate-[4deg] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] pointer-events-none"
       />
       <div class="pt-6 h-[180px] flex items-center justify-center text-center overflow-hidden font-mono">
@@ -763,25 +778,49 @@ const tagStyle = (t) => {
         function () { if (qt) { clearInterval(qt); qt = null; } });
     })();
 
-    // ── Último partido del FC Barcelona ──
+    // ── Último partido del FC Barcelona (Carga diferida al estar visible con timeout seguro) ──
     (function () {
       var box = document.getElementById('barca');
       if (!box) return;
-      fetch('https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=133739')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          var m = data.results && data.results[0];
-          if (!m) { box.innerHTML = '<span class="text-[11px] text-slate-400 font-mono">[Sin datos]</span>'; return; }
-          var badge = function (url) { return url ? '<img src="' + url + '" alt="" class="w-8 h-8 object-contain"/>' : ''; };
-          box.innerHTML =
-            '<div class="flex items-center gap-3 my-1">' +
-            '<div class="flex flex-col items-center gap-1">' + badge(m.strHomeTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold text-white">' + m.strHomeTeam + '</span></div>' +
-            '<div class="flex items-center gap-2"><span class="text-2xl font-bold text-sky-400">' + (m.intHomeScore || 0) + '</span><span class="text-lg text-slate-400">-</span><span class="text-2xl font-bold text-sky-400">' + (m.intAwayScore || 0) + '</span></div>' +
-            '<div class="flex flex-col items-center gap-1">' + badge(m.strAwayTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold text-white">' + m.strAwayTeam + '</span></div>' +
-            '</div>' +
-            '<span class="text-[8px] text-slate-400">' + (m.strVenue || '') + ' — ' + (m.strStatus || 'FT') + '</span>';
+      var fetched = false;
+
+      function loadMatch() {
+        if (fetched) return;
+        fetched = true;
+
+        var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        var timeoutId = controller ? setTimeout(function () { controller.abort(); }, 5000) : null;
+
+        fetch('https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=133739', {
+          signal: controller ? controller.signal : undefined
         })
-        .catch(function () { box.innerHTML = '<span class="text-[11px] text-slate-400 font-mono">[Sin datos]</span>'; });
+          .then(function (r) {
+            if (timeoutId) clearTimeout(timeoutId);
+            return r.json();
+          })
+          .then(function (data) {
+            var m = data.results && data.results[0];
+            if (!m) { box.innerHTML = '<span class="text-[11px] text-slate-400 font-mono">[Sin datos]</span>'; return; }
+            var badge = function (url) {
+              return url
+                ? '<img src="' + url + '" alt="" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain"/>'
+                : '';
+            };
+            box.innerHTML =
+              '<div class="flex items-center gap-3 my-1">' +
+              '<div class="flex flex-col items-center gap-1">' + badge(m.strHomeTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold text-white">' + m.strHomeTeam + '</span></div>' +
+              '<div class="flex items-center gap-2"><span class="text-2xl font-bold text-sky-400">' + (m.intHomeScore || 0) + '</span><span class="text-lg text-slate-400">-</span><span class="text-2xl font-bold text-sky-400">' + (m.intAwayScore || 0) + '</span></div>' +
+              '<div class="flex flex-col items-center gap-1">' + badge(m.strAwayTeamBadge) + '<span class="text-[9px] uppercase tracking-widest font-bold text-white">' + m.strAwayTeam + '</span></div>' +
+              '</div>' +
+              '<span class="text-[8px] text-slate-400">' + (m.strVenue || '') + ' — ' + (m.strStatus || 'FT') + '</span>';
+          })
+          .catch(function () {
+            if (timeoutId) clearTimeout(timeoutId);
+            box.innerHTML = '<span class="text-[11px] text-slate-400 font-mono">[Sin datos]</span>';
+          });
+      }
+
+      onVisible(box, loadMatch);
     })();
 
     // ── Cita: frases reflexivas que rotan con scramble (en bucle) ──

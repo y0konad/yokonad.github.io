@@ -14,6 +14,20 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: 'css-variables' },
   },
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 600,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/three')) {
+              return 'vendor-three';
+            }
+          },
+        },
+      },
+    },
+  },
   integrations: [
     // React solo se usa para la terminal interactiva de /writeups (isla).
     react(),

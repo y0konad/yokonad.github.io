@@ -51,6 +51,14 @@ const ScrambledText = ({
       });
     });
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      return;
+    }
+
     if (animateOnMount && charsRef.current.length > 0) {
       gsap.from(charsRef.current, {
         duration: duration * 0.55,
@@ -92,7 +100,7 @@ const ScrambledText = ({
       });
     };
 
-    el.addEventListener('pointermove', handleMove);
+    el.addEventListener('pointermove', handleMove, { passive: true });
 
     return () => {
       el.removeEventListener('pointermove', handleMove);

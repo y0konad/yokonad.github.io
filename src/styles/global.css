@@ -362,35 +362,7 @@ a {
   right: -2px;
 }
 
-/* ── Reproductor: playlist que rueda ── */
-.pl-viewport {
-  overflow: hidden;
-  min-height: 200px;
-}
-.pl-row {
-  border-bottom: 1px solid rgba(244, 244, 245, 0.1);
-  transition: background 0.35s ease;
-}
-.pl-active {
-  background: rgba(244, 244, 245, 0.1);
-  font-weight: 600;
-}
-.pl-mark {
-  opacity: 0;
-  font-size: 9px;
-  transition: opacity 0.35s ease;
-}
-.pl-active .pl-mark {
-  opacity: 1;
-}
-.pl-eq {
-  opacity: 0;
-  color: var(--ink-soft);
-  transition: opacity 0.35s ease;
-}
-.pl-active .pl-eq {
-  opacity: 1;
-}
+
 
 /* ── Carrusel de logos (marquee CSS, sin JS) ── */
 .logoloop {
@@ -469,44 +441,7 @@ a {
   }
 }
 
-/* ── Calendario de contribuciones de GitHub (Sobrio & Estático) ── */
-.gh-grid {
-  display: flex;
-  gap: 3px;
-  min-width: 640px;
-  padding: 4px 2px;
-}
 
-.gh-week {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-/* Celda base */
-.gh-cell {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  border-radius: 1px;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-/* Celdas dentro de la rejilla */
-.gh-week .gh-cell {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-}
-
-.gh-week .gh-cell:hover {
-  outline: 1px solid rgba(255, 255, 255, 0.45);
-  transform: none;
-  box-shadow: none;
-}
 
 /* ── Write-ups (cuadros + página de detalle) ── */
 /* Icono/imagen de la máquina en los cuadros (sin recuadro) */

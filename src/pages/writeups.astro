@@ -121,7 +121,7 @@ const total = entries.length;
                   <div class="flex items-center gap-2.5">
                     <span class="wu-mach">
                       {e.data.icon ? (
-                        <img src={e.data.icon} alt="" loading="lazy" />
+                        <img src={e.data.icon} alt="" loading="lazy" decoding="async" width="24" height="24" class="w-6 h-6 object-contain" />
                       ) : (
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#3f5168" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H4z" /><path d="M9 20h6M12 16v4" /></svg>
                       )}
