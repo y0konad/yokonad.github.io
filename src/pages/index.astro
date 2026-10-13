@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroTitle from '../components/HeroTitle.jsx';
+import DomeGallery from '../components/DomeGallery.jsx';
+import GithubArcade from '../components/GithubArcade.jsx';
 import { getCollection } from 'astro:content';
 import { profile, projects, team, teamName, teamDescription, comunidad } from '../data/content.js';
 
@@ -37,17 +40,59 @@ const techLogos = [
   { slug: 'deepseek', title: 'DeepSeek', color: '#4D6BFE' },
 ];
 
-// Reproductor de música — playlist (8 canciones)
+// Canciones de la lista oficial de Spotify de y0konad (44 pistas de sus capturas)
 const tracks = [
-  { id: 'eJLwj6FohJo', title: 'Indiana', artist: 'Hombres G' },
-  { id: 'URoY2H7VhBI', title: 'Parte del Aire', artist: 'Fito Páez' },
-  { id: '6hzrDeceEKc', title: 'Wonderwall', artist: 'Oasis' },
-  { id: 'tI-5uv4wryI', title: 'Champagne Supernova', artist: 'Oasis' },
-  { id: 'xg_Y7Or_hWM', title: 'Last Night on Earth', artist: 'Green Day' },
-  { id: 'Qy7LcH7pWZo', title: 'Díganselo', artist: 'El Kuelgue' },
-  { id: 'MVeiKDh4ffk', title: 'Cada Vez Que Digo Adiós', artist: 'Los Enanitos Verdes' },
-  { id: 'ZjZecW1BvZE', title: 'Mi Primer Día Sin Ti', artist: 'Los Enanitos Verdes' },
+  { title: 'Khé?', artist: 'Rauw Alejandro & Romeo Santos', cover: '/picture/music/khe-rauw-alejandro.jpg' },
+  { title: 'Pasos de Gigantes', artist: 'Bacilos', cover: '/picture/music/pasos-de-gigantes.jpg' },
+  { title: 'DIME', artist: 'Bad Bunny', cover: '/picture/music/dime-bad-bunny.jpg' },
+  { title: 'LA PRIMERA', artist: 'Dillom', cover: '/picture/music/la-primera-dillom.jpg' },
+  { title: 'princess peach', artist: 'Young Miko', cover: '/picture/music/princess-peach.jpg' },
+  { title: 'Party In The U.S.A.', artist: 'Miley Cyrus', cover: '/picture/music/party-in-the-usa.jpg' },
+  { title: 'Welcome to the Black Parade', artist: 'My Chemical Romance', cover: '/picture/music/welcome-to-the-black-parade.jpg' },
+  { title: 'HOUSE OF LUX 2', artist: 'DannyLux', cover: '/picture/music/house-of-lux-2.jpg' },
+  { title: 'pa quererte', artist: 'Rels B', cover: '/picture/music/pa-quererte.jpg' },
+  { title: 'Romantic Homicide', artist: 'd4vd', cover: '/picture/music/romantic-homicide.jpg' },
+  { title: 'Contando Lunares', artist: 'Don Patricio & Cruz Cafuné', cover: '/picture/music/contando-lunares.jpg' },
+  { title: 'Qué Pasaría...', artist: 'Rauw Alejandro & Bad Bunny', cover: '/picture/music/que-pasaria.jpg' },
+  { title: 'SLOW DANCING IN THE DARK', artist: 'Joji', cover: '/picture/music/slow-dancing-in-the-dark.jpg' },
+  { title: 'Please Please Please', artist: 'Sabrina Carpenter', cover: '/picture/music/please-please-please.jpg' },
+  { title: 'Kill Bill', artist: 'SZA', cover: '/picture/music/kill-bill.jpg' },
+  { title: 'Lisa', artist: 'Young Miko', cover: '/picture/music/lisa-young-miko.jpg' },
+  { title: 'Glimpse of Us', artist: 'Joji', cover: '/picture/music/glimpse-of-us.jpg' },
+  { title: 'Aquel Nap ZzZz', artist: 'Rauw Alejandro', cover: '/picture/music/aquel-nap-zzzz.jpg' },
+  { title: 'Otro Atardecer', artist: 'Bad Bunny & The Marías', cover: '/picture/music/otro-atardecer.jpg' },
+  { title: 'EL CLúB', artist: 'Bad Bunny', cover: '/picture/music/el-club-bad-bunny.jpg' },
+  { title: 'miau', artist: 'Young Cister', cover: '/picture/music/miau-young-cister.jpg' },
+  { title: 'QUIZAS SI QUIZAS NO', artist: 'Álvaro Díaz & Quevedo', cover: '/picture/music/quizas-si-quizas-no.jpg' },
+  { title: 'Pretty Boy', artist: 'The Neighbourhood', cover: '/picture/music/pretty-boy-the-nbhd.jpg' },
+  { title: 'MORFEO', artist: 'WOS', cover: '/picture/music/morfeo-wos.jpg' },
+  { title: 'Niño Amor', artist: 'Axel Fiks', cover: '/picture/music/nino-amor-axel-fiks.jpg' },
+  { title: 'BUENOS AIRES', artist: 'Nathy Peluso', cover: '/picture/music/buenos-aires-nathy-peluso.jpg' },
+  { title: 'thank u, next', artist: 'Ariana Grande', cover: '/picture/music/thank-u-next.jpg' },
+  { title: 'Llori Pari', artist: 'Álvaro Díaz & Feid', cover: '/picture/music/llori-pari.jpg' },
+  { title: 'Francés Limón', artist: 'Los Enanitos Verdes', cover: '/picture/music/frances-limon.jpg' },
+  { title: 'Supermercado', artist: 'Mon Laferte', cover: '/picture/music/supermercado-mon-laferte.jpg' },
+  { title: 'CRUZ', artist: 'Trueno & Feid', cover: '/picture/music/cruz-trueno-feid.jpg' },
+  { title: 'Summer', artist: 'Good Kid', cover: '/picture/music/summer-good-kid.jpg' },
+  { title: "I'm Gone", artist: 'Oliver Tree', cover: '/picture/music/im-gone-oliver-tree.jpg' },
+  { title: 'Open Arms', artist: 'SZA feat. Travis Scott', cover: '/picture/music/open-arms-sza.jpg' },
+  { title: 'LADO A LADO', artist: 'Bhavi', cover: '/picture/music/lado-a-lado-bhavi.jpg' },
+  { title: 'Mariposa tecknicolor', artist: 'Fito Páez', cover: '/picture/music/mariposa-tecknicolor.jpg' },
+  { title: 'Adiós', artist: 'Gustavo Cerati', cover: '/picture/music/adios-cerati.jpg' },
+  { title: 'Indiana', artist: 'Hombres G', cover: '/picture/music/indiana-hombres-g.jpg' },
+  { title: 'Dar es dar', artist: 'Fito Páez', cover: '/picture/music/dar-es-dar.jpg' },
+  { title: 'Loco', artist: 'Andrés Calamaro', cover: '/picture/music/loco-calamaro.jpg' },
+  { title: '505', artist: 'Arctic Monkeys', cover: '/picture/music/505-arctic-monkeys.jpg' },
+  { title: 'Problemón', artist: 'Álvaro Díaz & Rauw Alejandro', cover: '/picture/music/problemon.jpg' },
+  { title: '220', artist: 'Dillom', cover: '/picture/music/220-dillom.jpg' },
+  { title: 'Yo No Soy Celoso', artist: 'Bad Bunny', cover: '/picture/music/yo-no-soy-celoso.jpg' },
 ];
+
+// Portadas locales y metadatos para la galería 3D (React Bits DomeGallery)
+const domeImages = tracks.map((t) => ({
+  src: t.cover,
+  alt: `${t.artist} - ${t.title}`,
+}));
 
 // Iconos para las tarjetas de contacto
 const linkConfig = {
@@ -97,7 +142,7 @@ const tagStyle = (t) => {
     <!-- ═══════════ MASTHEAD ═══════════ -->
     <header class="flex items-center justify-between rounded-[2px] border border-white/5 bg-[#040711]/95 px-3 sm:px-4 py-2.5 text-slate-200">
       <span class="text-[10px] sm:text-[12px] font-semibold tracking-[0.14em] uppercase text-slate-300 font-mono flex items-center gap-2">
-        <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-purple-400"></span>
+        <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-sky-400"></span>
         // y0konad
       </span>
       <span class="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[12px] font-medium tracking-[0.14em] uppercase">
@@ -108,16 +153,12 @@ const tagStyle = (t) => {
     <!-- ═══════════ 1 · TÍTULO / HERO ═══════════ -->
     <section>
       <div class="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300 bg-[#040711] border border-white/5 px-3 py-1 rounded-[2px] mb-3 font-mono">
-        <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-purple-400"></span>
+        <span class="inline-block w-1.5 h-1.5 rounded-[1px] bg-sky-400"></span>
         // Perú · Ciberseguridad & Desarrollo
       </div>
       <div class="flex flex-col lg:flex-row lg:items-end gap-5 lg:gap-8">
         <div class="lg:flex-1 min-w-0 lg:self-start">
-          <h1 class="display uppercase leading-[0.84] text-white tracking-tight">
-            <span class="scramble block text-[clamp(2.6rem,11vw,5.6rem)]">Desde</span>
-            <span class="scramble block text-[clamp(2.6rem,11vw,5.6rem)]">Mi</span>
-            <span id="hero-l3" class="scramble block text-[clamp(2.6rem,11vw,5.6rem)] text-white">Terminal</span>
-          </h1>
+          <HeroTitle client:load />
           <p class="mt-4 text-[13px] sm:text-[14px] leading-relaxed text-slate-300 max-w-2xl font-mono">
             Ciberseguridad, redes y código desde Perú. Un recorrido por proyectos y la comunidad que
             construyo en el camino. Entre terminales, Linux y buena música, documento lo que aprendo y
@@ -144,10 +185,14 @@ const tagStyle = (t) => {
               src={profile.avatar}
               alt="y0konad"
               loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              width="192"
+              height="240"
               class="w-44 h-52 sm:w-48 sm:h-60 object-cover rounded-[2px] border border-white/5"
             />
             <span class="absolute -bottom-2.5 left-2 inline-flex items-center gap-1.5 bg-[#020408] border border-white/10 text-slate-200 text-[9px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-[2px] font-mono">
-              <span class="w-1.5 h-1.5 rounded-[1px] bg-purple-400"></span>
+              <span class="w-1.5 h-1.5 rounded-[1px] bg-emerald-400"></span>
               Disponible
             </span>
           </div>
@@ -214,7 +259,7 @@ const tagStyle = (t) => {
           <ul class="p-4 text-[11.5px] leading-relaxed space-y-1.5 font-mono text-slate-300">
             {stack.map((s) => (
               <li class="flex items-center gap-2">
-                <span class="text-purple-400 font-bold">&gt;</span> {s}
+                <span class="text-sky-400 font-bold">&gt;</span> {s}
               </li>
             ))}
           </ul>
@@ -272,7 +317,7 @@ const tagStyle = (t) => {
                     </span>
                   ))}
                 </div>
-                <span class="mt-3 text-[11px] font-bold text-purple-400 group-hover:text-purple-300 flex items-center gap-1">
+                <span class="mt-3 text-[11px] font-bold text-sky-400 group-hover:text-sky-300 flex items-center gap-1">
                   Ver en GitHub →
                 </span>
               </div>
@@ -298,7 +343,7 @@ const tagStyle = (t) => {
             <span class="text-[9px] text-slate-400 font-mono">[ID: 2072316]</span>
           </div>
           <div class="w-full h-40 flex items-center justify-center border-b border-white/5 p-4 bg-[#050911]">
-            <img src="/picture/logos/logo_htb.webp" alt="Hack The Box" loading="lazy" class="max-h-24 w-auto object-contain" />
+            <img src="/picture/logos/logo_htb.webp" alt="Hack The Box" loading="lazy" decoding="async" width="128" height="96" class="max-h-24 w-auto object-contain" />
           </div>
           <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
             <p class="mb-3 text-slate-300 flex-1">Mi perfil en <span class="hl" style="background:rgba(159,239,0,0.12);color:#9fef00;border-bottom:1px solid rgba(159,239,0,0.3)">Hack The Box</span>: máquinas comprometidas, retos y progreso en hacking ético.</p>
@@ -333,43 +378,18 @@ const tagStyle = (t) => {
     <!-- ═══════════ 5 · ACTIVIDAD · GITHUB ═══════════ -->
     <section class="space-y-4">
       <div class="section-label">// Actividad en GitHub</div>
-      <div class="grid gap-3 md:grid-cols-[4fr_1fr]">
-        <div class="win">
-          <div class="win-bar is-ink">
-            <span class="scramble text-slate-200">GitHub // y0konad</span>
-            <span class="text-[9px] text-slate-400 font-mono">[Live]</span>
-          </div>
-          <div class="p-3.5">
-            <div class="flex items-center justify-between mb-3 border-b border-white/5 pb-2">
-              <a href="https://github.com/y0konad" target="_blank" rel="noopener noreferrer" class="text-[11px] font-bold uppercase tracking-widest text-white hover:text-[#39d353] flex items-center gap-1.5 transition-colors font-mono">
-                <span class="text-[#39d353]">&gt;</span> y0konad
-              </a>
-              <span id="gh-total" class="text-[11px] text-slate-300 font-mono font-medium tabular-nums">Cargando datos…</span>
-            </div>
-            <div id="gh-cal" class="overflow-x-auto pb-2 scrollbar-thin">
-              <div class="text-[11px] text-slate-400 py-6 text-center font-mono">Cargando contribuciones reales desde GitHub API…</div>
-            </div>
-            <div class="flex items-center justify-between mt-2 pt-2 border-t border-white/5 text-[9px] text-slate-400 font-mono">
-              <span class="text-slate-500 tracking-wider">HISTORIAL DE COMMITS (365 DÍAS)</span>
-              <div class="flex items-center gap-1.5">
-                <span class="mr-1 text-slate-400">Menos</span>
-                <span class="gh-cell" style="background:rgba(255,255,255,0.06)" title="0 contribuciones"></span>
-                <span class="gh-cell" style="background:#0e4429" title="Nivel 1"></span>
-                <span class="gh-cell" style="background:#006d32" title="Nivel 2"></span>
-                <span class="gh-cell" style="background:#26a641" title="Nivel 3"></span>
-                <span class="gh-cell" style="background:#39d353" title="Nivel 4"></span>
-                <span class="ml-1 text-slate-400">Más</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="grid gap-3 md:grid-cols-[1fr_200px] lg:grid-cols-[1fr_220px]">
+        <GithubArcade client:visible username="y0konad" />
 
-        <div class="win overflow-hidden hidden md:block relative">
+        <div class="win overflow-hidden hidden md:flex flex-col relative aspect-square md:aspect-auto">
           <img
-            src="https://media.tenor.com/P3SQJ4JbHOsAAAAd/tying-the-knot-with-an-amagami-sister-%E7%94%98%E7%A5%9E%E3%81%95%E3%82%93%E3%81%A1%E3%81%AE%E7%B8%81%E7%B5%90%E3%81%B3.gif"
-            alt="Amagami-san Chi no Enmusubi"
+            src="/picture/activity-card.jpg"
+            alt="y0konad - Retro Anime"
             loading="lazy"
-            class="absolute inset-0 w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity"
+            decoding="async"
+            width="720"
+            height="720"
+            class="w-full h-full object-cover object-center"
           />
         </div>
       </div>
@@ -383,7 +403,7 @@ const tagStyle = (t) => {
         <h2 class="scramble display text-3xl md:text-4xl uppercase text-white">{teamName}</h2>
         <div class="mt-2 flex items-center justify-center gap-2 text-slate-500 text-xs">
           <span>████████</span>
-          <span class="tracking-widest font-bold text-purple-400">•••</span>
+          <span class="tracking-widest font-bold text-sky-400">•••</span>
           <span>████████</span>
         </div>
         <p class="mt-3 text-[13px] leading-relaxed max-w-2xl mx-auto rounded-[2px] border border-white/5 bg-[#050911] px-4 py-3 text-slate-300">{teamDescription}</p>
@@ -394,7 +414,7 @@ const tagStyle = (t) => {
           team.map((m) => (
             <div class="win p-4 flex flex-col items-center text-center font-mono">
               <div class="w-28 h-28 sm:w-32 sm:h-32 overflow-hidden rounded-[2px] border border-white/5 mb-3 shrink-0">
-                <img src={m.avatar} alt={m.name} loading="lazy" class="w-full h-full object-cover" />
+                <img src={m.avatar} alt={m.name} loading="lazy" decoding="async" width="80" height="80" class="w-full h-full object-cover" />
               </div>
               <p class="display text-[16px] text-white leading-none">{m.name}</p>
               <span class="inline-block mt-2 mb-2 px-3 py-0.5 text-[9px] uppercase tracking-widest font-bold rounded-[2px] border border-white/5 text-slate-300 bg-[#060e1c]">
@@ -426,7 +446,7 @@ const tagStyle = (t) => {
             <span class="text-[9px] font-mono text-sky-300">[Discord]</span>
           </div>
           <div class="w-full h-40 flex items-center justify-center gap-3 sm:gap-4 border-b border-white/5 p-4 bg-[#030a14]">
-            <img src="/picture/logos/linux-svgrepo-com.webp" alt="Tux" loading="lazy" class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 object-contain" />
+            <img src="/picture/logos/linux-svgrepo-com.webp" alt="Tux" loading="lazy" decoding="async" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 shrink-0 object-contain" />
             <span class="display text-3xl sm:text-4xl uppercase tracking-wider text-white">KoroSoft</span>
           </div>
           <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
@@ -450,7 +470,7 @@ const tagStyle = (t) => {
             <span class="text-[9px] font-mono text-rose-300">[Académico]</span>
           </div>
           <div class="w-full h-40 flex items-center justify-center border-b border-white/5 p-4 bg-[#120404]">
-            <img src="/picture/logos/cybersen-logo-blanco.webp" alt="CyberSen" loading="lazy" class="max-h-24 w-auto object-contain" />
+            <img src="/picture/logos/cybersen-logo-blanco.webp" alt="CyberSen" loading="lazy" decoding="async" width="128" height="96" class="max-h-24 w-auto object-contain" />
           </div>
           <div class="p-4 text-[12.5px] leading-relaxed flex flex-col flex-1 font-mono">
             <p class="mb-2"><span style="background:rgba(239,68,68,0.15);color:#fca5a5;border-bottom:1px solid rgba(239,68,68,0.3);padding:0.02em 0.2em;font-weight:700">Hacking ético · CTF</span></p>
@@ -516,52 +536,30 @@ const tagStyle = (t) => {
     </section>
 
     <!-- ═══════════ 9 · MÚSICA ═══════════ -->
-    <section class="space-y-4">
+    <section id="musica" class="space-y-4">
       <div class="section-label">// Música</div>
 
-      <!-- Álbumes orbitando (CSS offset-path, sin dependencias externas) -->
-      <div class="orbit-container" aria-hidden="true">
-        <div class="orbit-scale">
-          <div class="orbit-rot">
-            <svg class="orbit-path" viewBox="0 0 760 270" width="760" height="270" aria-hidden="true">
-              <path
-                d="M 60 135 A 320 80 0 1 0 700 135 A 320 80 0 1 0 60 135"
-                fill="none"
-                stroke="rgba(255,255,255,0.12)"
-                stroke-width="2"
-                stroke-dasharray="5 7"
-              />
-            </svg>
-            {
-              tracks.map((t, i) => (
-                <div class="orbit-item" style={`animation-delay:-${((i / tracks.length) * 77).toFixed(2)}s`}>
-                  <div class="orbit-frame rounded-[2px] border-white/10">
-                    <img src={`https://i.ytimg.com/vi/${t.id}/hqdefault.jpg`} alt="" loading="lazy" draggable="false" />
-                  </div>
-                </div>
-              ))
-            }
-          </div>
+      <!-- Cúpula 3D interactiva de música (React Bits DomeGallery) -->
+      <div class="win max-w-[780px] mx-auto overflow-hidden">
+        <div class="win-bar is-ink flex items-center justify-between">
+          <span class="scramble text-slate-200">Música // Colección</span>
+          <span class="text-[9px] text-slate-400 font-mono">[44 PISTAS]</span>
         </div>
-      </div>
-
-      <!-- Playlist a todo el ancho (auto-alterna la canción) -->
-      <div class="win">
-        <div class="win-bar">
-          <span class="scramble text-slate-200">Playlist // Canciones</span>
-          <span class="text-[9px] font-mono text-slate-400">[8 TRACKS]</span>
-        </div>
-        <div class="pl-viewport">
-          <ul id="playlist" class="text-[12px] font-mono">
-            {
-              tracks.map((t) => (
-                <li class="pl-row flex items-center gap-3 px-3.5 py-2.5">
-                  <span class="pl-mark w-4 text-center text-purple-400">▶</span>
-                  <span class="flex-1 min-w-0 truncate text-slate-300"><span class="font-semibold text-white">{t.artist}</span> — {t.title}</span>
-                </li>
-              ))
-            }
-          </ul>
+        <div class="relative w-full h-[440px] sm:h-[490px] bg-[#020817] overflow-hidden">
+          <DomeGallery
+            client:visible
+            images={domeImages}
+            fit={1.1}
+            fitBasis="height"
+            minRadius={490}
+            padFactor={0.1}
+            overlayBlurColor="#020817"
+            grayscale={false}
+            imageBorderRadius="12px"
+            openedImageBorderRadius="16px"
+            openedImageWidth="360px"
+            openedImageHeight="360px"
+          />
         </div>
       </div>
     </section>
@@ -627,7 +625,7 @@ const tagStyle = (t) => {
                   </svg>
                 )}
                 <span class="flex-1 min-w-0 font-mono">
-                  <span class="block text-[12.5px] font-bold uppercase tracking-[0.14em] text-white group-hover:text-purple-400 transition-colors">{link.label}</span>
+                  <span class="block text-[12.5px] font-bold uppercase tracking-[0.14em] text-white group-hover:text-sky-400 transition-colors">{link.label}</span>
                   <span class="block text-[11px] text-slate-400 truncate">{handle}</span>
                 </span>
               </a>
@@ -716,82 +714,6 @@ const tagStyle = (t) => {
       titles.forEach(function (el) { io.observe(el); });
     })();
 
-    // ── Calendario de contribuciones reales de GitHub (Verde Oficial GitHub) ──
-    (function () {
-      var cal = document.getElementById('gh-cal');
-      var totalEl = document.getElementById('gh-total');
-      if (!cal) return;
-
-      var LEVELS = ['rgba(255,255,255,0.06)', '#0e4429', '#006d32', '#26a641', '#39d353'];
-
-      fetch('https://github-contributions-api.jogruber.de/v4/y0konad?y=last')
-        .then(function (r) {
-          if (!r.ok) throw new Error('Network error');
-          return r.json();
-        })
-        .then(function (data) {
-          var c = data.contributions || [];
-          if (!c.length) {
-            cal.innerHTML = '<div class="text-[11px] py-6 text-center text-slate-400 font-mono">[Sin datos de telemetría]</div>';
-            return;
-          }
-
-          var weeks = [], cur = [];
-          var startDay = new Date(c[0].date).getDay();
-          for (var i = 0; i < startDay; i++) cur.push(null);
-          c.forEach(function (d) {
-            cur.push(d);
-            if (cur.length === 7) {
-              weeks.push(cur);
-              cur = [];
-            }
-          });
-          if (cur.length) {
-            while (cur.length < 7) cur.push(null);
-            weeks.push(cur);
-          }
-
-          var wrap = document.createElement('div');
-          wrap.className = 'gh-grid';
-
-          weeks.forEach(function (w) {
-            var col = document.createElement('div');
-            col.className = 'gh-week';
-            w.forEach(function (d) {
-              var level = d ? (d.level || 0) : 0;
-              var cell = document.createElement('span');
-              cell.className = 'gh-cell';
-              cell.style.background = LEVELS[level];
-              if (d) {
-                var commitLabel = d.count === 1 ? '1 contribución' : d.count + ' contribuciones';
-                cell.title = d.date + ' — ' + commitLabel;
-                cell.setAttribute('aria-label', d.date + ': ' + commitLabel);
-              }
-              col.appendChild(cell);
-            });
-            wrap.appendChild(col);
-          });
-
-          cal.innerHTML = '';
-          cal.appendChild(wrap);
-
-          var totalSum = 0;
-          if (data.total && typeof data.total.lastYear === 'number') {
-            totalSum = data.total.lastYear;
-          } else {
-            c.forEach(function (d) { totalSum += (d.count || 0); });
-          }
-
-          if (totalEl) {
-            totalEl.textContent = totalSum.toLocaleString() + ' contribuciones en el último año';
-          }
-        })
-        .catch(function () {
-          cal.innerHTML = '<div class="text-[11px] py-6 text-center text-slate-400 font-mono">[Error al conectar con la API de GitHub]</div>';
-          if (totalEl) totalEl.textContent = 'Modo offline';
-        });
-    })();
-
     // ── Contador de ciberataques en vivo ──
     (function () {
       var el = document.getElementById('cyber-count');
@@ -829,7 +751,7 @@ const tagStyle = (t) => {
         var vals = [Y, Mo, D, pad(H), pad(Mi), pad(S)];
         var html = '';
         for (var i = 0; i < 6; i++) {
-          html += '<div class="text-center"><span class="block text-base sm:text-lg font-bold leading-none text-purple-400">' + vals[i] + '</span><span class="text-[7px] uppercase tracking-widest text-slate-400">' + labels[i] + '</span></div>';
+          html += '<div class="text-center"><span class="block text-base sm:text-lg font-bold leading-none text-sky-400">' + vals[i] + '</span><span class="text-[7px] uppercase tracking-widest text-slate-400">' + labels[i] + '</span></div>';
           if (i < 5) html += '<span class="text-sm leading-none text-slate-500">:</span>';
         }
         el.innerHTML = html;
@@ -912,146 +834,6 @@ const tagStyle = (t) => {
         });
       }
       cycle();
-    })();
-
-    // ── Música: randomiza canciones + playlist que rueda hacia arriba ──
-    (function () {
-      function shuffle(a) {
-        for (var i = a.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var t = a[i]; a[i] = a[j]; a[j] = t;
-        }
-        return a;
-      }
-
-      // Randomizar qué álbum aparece en cada posición de la órbita
-      var orbitImgs = [].slice.call(document.querySelectorAll('.orbit-item img'));
-      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Pausa la órbita (animación CSS) cuando no está en pantalla → ahorra repintados
-      var orbitBox = document.querySelector('.orbit-container');
-      var orbitVisible = true;
-      onVisible(orbitBox,
-        function () { orbitVisible = true; if (orbitBox) orbitBox.classList.remove('is-paused'); },
-        function () { orbitVisible = false; if (orbitBox) orbitBox.classList.add('is-paused'); });
-
-      if (orbitImgs.length > 1) {
-        var srcs = orbitImgs.map(function (im) { return im.getAttribute('src'); });
-        shuffle(srcs);
-        orbitImgs.forEach(function (im, i) { im.setAttribute('src', srcs[i]); });
-
-        // Las carátulas van cambiando mientras orbitan (intercambio con fundido)
-        if (!reduceMotion) {
-          setInterval(function () {
-            if (!orbitVisible) return;
-            // Rota todas las carátulas una posición (cada slot va pasando por todos los álbumes)
-            srcs.unshift(srcs.pop());
-            orbitImgs.forEach(function (im, i) {
-              setTimeout(function () {
-                im.style.opacity = '0';
-                setTimeout(function () {
-                  im.setAttribute('src', srcs[i]);
-                  im.style.opacity = '';
-                }, 200);
-              }, i * 70);
-            });
-          }, 7000);
-        }
-      }
-
-      var ul = document.getElementById('playlist');
-      if (!ul) return;
-      var viewport = ul.parentElement;
-      var rows = [].slice.call(ul.querySelectorAll('.pl-row'));
-      if (rows.length < 2) return;
-
-      // Randomizar el orden de la playlist
-      shuffle(rows);
-      rows.forEach(function (li) { ul.appendChild(li); });
-
-      // Mostrar solo algunas filas (las ocultas entran al rodar → sin duplicados)
-      var rowH = ul.querySelector('.pl-row').getBoundingClientRect().height;
-      var VISIBLE = Math.min(5, rows.length);
-      viewport.style.height = Math.round(rowH * VISIBLE) + 'px';
-
-      function highlightTop() {
-        var rs = ul.querySelectorAll('.pl-row');
-        for (var i = 0; i < rs.length; i++) rs[i].classList.toggle('pl-active', i === 0);
-      }
-      highlightTop();
-
-      var animating = false;
-      function advance() {
-        if (animating) return;
-        var first = ul.querySelector('.pl-row');
-        if (!first) return;
-        animating = true;
-        var h = first.getBoundingClientRect().height;
-        ul.style.transition = 'transform 0.55s ease';
-        ul.style.transform = 'translateY(-' + h + 'px)';
-        function done(e) {
-          if (e.target !== ul || e.propertyName !== 'transform') return;
-          ul.removeEventListener('transitionend', done);
-          ul.style.transition = 'none';
-          first.classList.remove('pl-active');
-          ul.appendChild(first);
-          ul.style.transform = 'translateY(0)';
-          void ul.offsetHeight;
-          highlightTop();
-          animating = false;
-        }
-        ul.addEventListener('transitionend', done);
-      }
-      setInterval(advance, 8820);
-    })();
-
-    // ── Escalado responsive del orbit de álbumes ──
-    (function () {
-      var box = document.querySelector('.orbit-scale');
-      if (!box) return;
-      var BASE = 760;
-      var cont = box.parentElement;
-      function upd() { box.style.transform = 'scale(' + cont.clientWidth / BASE + ')'; }
-      upd();
-      if (window.ResizeObserver) new ResizeObserver(upd).observe(cont);
-      else window.addEventListener('resize', upd);
-    })();
-
-    // ── Hero: alterna "Terminal" ↔ "Cama" con scramble (sin mover el layout) ──
-    (function () {
-      var l3 = document.getElementById('hero-l3');
-      if (!l3) return;
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      var words = ['Terminal', 'Cama'];
-      var idx = 0;
-
-      function scrambleWord(el, text) {
-        if (reduce) { el.textContent = text; return; }
-        var q = [];
-        for (var i = 0; i < text.length; i++) q.push({ c: text[i], to: 4 + Math.floor(Math.random() * 16) });
-        var frame = 0;
-        function update() {
-          var out = '', done = 0;
-          for (var i = 0; i < q.length; i++) {
-            if (frame >= q[i].to) { out += q[i].c; done++; }
-            else {
-              if (!q[i].r || Math.random() < 0.3) q[i].r = CH[Math.floor(Math.random() * CH.length)];
-              out += '<span class="scr-dim">' + q[i].r + '</span>';
-            }
-          }
-          el.innerHTML = out;
-          if (done === q.length) { el.textContent = text; return; }
-          frame++;
-          requestAnimationFrame(update);
-        }
-        update();
-      }
-
-      setInterval(function () {
-        idx = (idx + 1) % words.length;
-        scrambleWord(l3, words[idx]);
-      }, 5000);
     })();
   </script>
 </Layout>

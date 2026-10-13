@@ -1,0 +1,8 @@
+.text-block {
+  will-change: transform;
+}
+
+.char {
+  will-change: transform;
+  display: inline-block;
+}

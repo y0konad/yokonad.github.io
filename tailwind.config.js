@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         mono: ['"IBM Plex Mono"', '"Courier New"', 'Courier', 'monospace'],
+        pixel: ['"Press Start 2P"', 'monospace'],
       },
       colors: {
         terminal: {
