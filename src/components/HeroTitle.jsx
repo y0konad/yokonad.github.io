@@ -56,15 +56,16 @@ export default function HeroTitle() {
 
     if (isFirstRender.current) {
       isFirstRender.current = false;
-      return;
-    }
-
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-      wordRef.current.textContent = activeMode.word;
+      gsap.to(wordRef.current, {
+        duration: 0.8,
+        delay: 0.15,
+        scrambleText: {
+          text: activeMode.word,
+          chars: '01!#%&*+=-~<>/?ABCDEF',
+          speed: 0.45
+        },
+        ease: 'power1.out'
+      });
       return;
     }
 
@@ -81,7 +82,7 @@ export default function HeroTitle() {
 
   return (
     <div
-      className="block w-fit cursor-default select-none"
+      className="block w-full max-w-full cursor-default select-none overflow-hidden"
       role="banner"
       aria-label={`Desde Mi ${activeMode.word}`}
     >
@@ -92,24 +93,24 @@ export default function HeroTitle() {
         duration={0.75}
         speed={0.42}
         scrambleChars="01!#%&*+=-~<>/?ABCDEF"
-        className="font-pixel uppercase leading-[1.15] sm:leading-[1.2] text-white"
+        className="font-pixel uppercase leading-[1.12] sm:leading-[1.15] text-white flex flex-col sm:flex-row sm:items-baseline sm:flex-wrap sm:gap-x-3.5 md:gap-x-4 max-w-full"
       >
-        <span className="scramble-char block text-[clamp(1.75rem,5.8vw,3.85rem)]">
+        <span className="scramble-char block sm:inline-block text-[clamp(3.4rem,11.9vw,4.2rem)] sm:text-[clamp(2rem,5.5vw,4.35rem)] sm:whitespace-nowrap">
           Desde
         </span>
-        <span className="scramble-char block text-[clamp(1.75rem,5.8vw,3.85rem)]">
+        <span className="scramble-char block sm:inline-block text-[clamp(3.4rem,11.9vw,4.2rem)] sm:text-[clamp(2rem,5.5vw,4.35rem)] sm:whitespace-nowrap">
           Mi
         </span>
         {/* El nodo inicial arranca en TERMINAL y es transmutado suavemente por GSAP */}
         <span
           ref={wordRef}
-          className={`block text-[clamp(1.75rem,5.8vw,3.85rem)] min-w-[8.5ch] ${activeMode.color} transition-colors duration-300`}
+          className={`block sm:inline-block text-[clamp(3rem,11vw,4.2rem)] sm:text-[clamp(2rem,5.5vw,4.35rem)] tracking-tight sm:tracking-normal min-w-[7ch] max-w-full ${activeMode.color} transition-colors duration-300 sm:whitespace-nowrap`}
         >
           {MODES[0].word}
         </span>
       </ScrambledText>
 
-      {/* Telemetría óptica Flumen (Optical Micro-Alignment) */}
+      {/* Telemetría óptica (Optical Micro-Alignment) */}
       <div className="flex items-center gap-2 mt-3.5">
         <span className="inline-flex items-center gap-1.5 h-5 px-2 rounded-[2px] border border-white/10 bg-[#040711] text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-300">
           <span className="w-1.5 h-1.5 rounded-[1px] bg-sky-400 shrink-0 animate-pulse" />

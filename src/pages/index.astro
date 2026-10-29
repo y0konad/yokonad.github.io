@@ -20,24 +20,26 @@ const stack = [
   'Proyectos open-source',
 ];
 
-// Logos del carrusel con colores de marca para el glow (logos oficiales)
+// Logos oficiales de SVGL en alta fidelidad (vectoriales locales con glow de marca)
 const techLogos = [
-  { slug: 'javascript', title: 'JavaScript', color: '#F7DF1E' },
-  { slug: 'react', title: 'React', color: '#61DAFB' },
-  { slug: 'nodedotjs', title: 'Node.js', color: '#5FA04E' },
-  { slug: 'python', title: 'Python', src: '/picture/logos/python.svg', color: '#3776AB' },
-  { slug: 'css', title: 'CSS', color: '#A855F7' }, // Morado
-  { slug: 'git', title: 'Git', color: '#F05032' },
-  { slug: 'java', title: 'Java / OpenJDK', src: '/picture/logos/java.svg', color: '#E76F00' },
-  { slug: 'tailwindcss', title: 'Tailwind', color: '#06B6D4' },
-  { slug: 'html5', title: 'HTML', color: '#E34F26' },
-  { slug: 'linux', title: 'Linux', src: '/picture/logos/linux.svg', color: '#FCC624' },
-  { slug: 'archlinux', title: 'Arch', color: '#1793D1' },
-  { slug: 'ubuntu', title: 'Ubuntu', color: '#E95420' },
-  { slug: 'go', title: 'Go', color: '#00ADD8' },
-  { slug: 'npm', title: 'npm', color: '#CB3837' },
-  { slug: 'claude', title: 'Claude', color: '#D97757' },
-  { slug: 'deepseek', title: 'DeepSeek', color: '#4D6BFE' },
+  { src: '/picture/logos/tech/javascript.svg', title: 'JavaScript', color: '#F7DF1E' },
+  { src: '/picture/logos/tech/react.svg', title: 'React', color: '#61DAFB' },
+  { src: '/picture/logos/tech/nodejs.svg', title: 'Node.js', color: '#5FA04E' },
+  { src: '/picture/logos/tech/python.svg', title: 'Python', color: '#3776AB' },
+  { src: '/picture/logos/tech/css.svg', title: 'CSS', color: '#A855F7' },
+  { src: '/picture/logos/tech/git.svg', title: 'Git', color: '#F05032' },
+  { src: '/picture/logos/tech/bash.svg', title: 'Bash', color: '#4EAA25' },
+  { src: '/picture/logos/tech/linux.svg', title: 'Linux', color: '#FCC624' },
+  { src: '/picture/logos/tech/archlinux.svg', title: 'Arch Linux', color: '#1793D1' },
+  { src: '/picture/logos/tech/ubuntu.svg', title: 'Ubuntu', color: '#E95420' },
+  { src: '/picture/logos/tech/raspberrypi.svg', title: 'Raspberry Pi', color: '#C51A4A' },
+  { src: '/picture/logos/tech/java.svg', title: 'Java / OpenJDK', color: '#E76F00' },
+  { src: '/picture/logos/tech/tailwindcss.svg', title: 'Tailwind CSS', color: '#06B6D4' },
+  { src: '/picture/logos/tech/html5.svg', title: 'HTML5', color: '#E34F26' },
+  { src: '/picture/logos/tech/go.svg', title: 'Go', color: '#00ADD8' },
+  { src: '/picture/logos/tech/npm.svg', title: 'npm', color: '#CB3837' },
+  { src: '/picture/logos/tech/claude.svg', title: 'Claude (Anthropic)', color: '#D97757' },
+  { src: '/picture/logos/tech/deepseek.svg', title: 'DeepSeek', color: '#4D6BFE' },
 ];
 
 // Canciones de la lista oficial de Spotify de y0konad (44 pistas de sus capturas)
@@ -273,23 +275,18 @@ const tagStyle = (t) => {
             [...techLogos, ...techLogos].map((l, i) => (
               <span
                 class="logoloop__item"
-                title={l.title || l.text}
+                title={l.title}
                 aria-hidden={i >= techLogos.length ? 'true' : undefined}
-                style={`--glow: ${l.color || '#9fef00'}`}
               >
-                {l.src || l.slug ? (
-                  <img
-                    src={l.src || `https://cdn.simpleicons.org/${l.slug}`}
-                    alt={l.title}
-                    loading="lazy"
-                    decoding="async"
-                    draggable="false"
-                    width="40"
-                    height="40"
-                  />
-                ) : (
-                  <span class="logoloop__chip">{l.text}</span>
-                )}
+                <img
+                  src={l.src}
+                  alt={l.title}
+                  loading="lazy"
+                  decoding="async"
+                  draggable="false"
+                  width="36"
+                  height="36"
+                />
               </span>
             ))
           }
@@ -545,15 +542,15 @@ const tagStyle = (t) => {
           <span class="scramble text-slate-200">Música // Colección</span>
           <span class="text-[9px] text-slate-400 font-mono">[44 PISTAS]</span>
         </div>
-        <div class="relative w-full h-[440px] sm:h-[490px] bg-[#020817] overflow-hidden">
+        <div class="relative w-full h-[440px] sm:h-[490px] bg-black overflow-hidden">
           <DomeGallery
-            client:visible
+            client:load
             images={domeImages}
             fit={1.1}
             fitBasis="height"
             minRadius={490}
             padFactor={0.1}
-            overlayBlurColor="#020817"
+            overlayBlurColor="#000000"
             grayscale={false}
             imageBorderRadius="12px"
             openedImageBorderRadius="16px"
@@ -712,11 +709,10 @@ const tagStyle = (t) => {
         update();
       }
 
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var titles = document.querySelectorAll('.scramble');
 
-      // El observer solo dispara el scramble de los títulos cuando entran en pantalla.
-      if (reduce || !('IntersectionObserver' in window)) { return; }
+      // El observer dispara el scramble de los títulos cuando entran en pantalla.
+      if (!('IntersectionObserver' in window)) { return; }
 
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
@@ -791,7 +787,7 @@ const tagStyle = (t) => {
         var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
         var timeoutId = controller ? setTimeout(function () { controller.abort(); }, 5000) : null;
 
-        fetch('https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=133739', {
+        fetch('https://www.thesportsdb.com/api/v1/json/123/eventslast.php?id=133739', {
           signal: controller ? controller.signal : undefined
         })
           .then(function (r) {
@@ -836,11 +832,9 @@ const tagStyle = (t) => {
       ];
       var CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
       var HOLD = 4000; // ms que se mantiene cada frase
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var idx = 0;
 
       function scrambleTo(text, cb) {
-        if (reduce) { el.textContent = text; if (cb) setTimeout(cb, HOLD); return; }
         var q = [];
         for (var i = 0; i < text.length; i++) {
           q.push({ c: text[i], to: 6 + Math.floor(Math.random() * 22) });

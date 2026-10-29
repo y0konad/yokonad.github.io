@@ -30,7 +30,12 @@ main.sphere-main {
   touch-action: none;
   user-select: none;
   -webkit-user-select: none;
-  background: var(--overlay-blur-color, #020817);
+  background: var(--overlay-blur-color, #000000);
+  cursor: grab;
+}
+
+main.sphere-main:active {
+  cursor: grabbing;
 }
 
 .stage {
@@ -58,12 +63,12 @@ main.sphere-main {
 }
 
 .overlay {
-  background-image: radial-gradient(rgba(235, 235, 235, 0) 65%, var(--overlay-blur-color, #020817) 100%);
+  background-image: radial-gradient(rgba(235, 235, 235, 0) 65%, var(--overlay-blur-color, #000000) 100%);
 }
 
 .overlay--blur {
-  -webkit-mask-image: radial-gradient(rgba(235, 235, 235, 0) 70%, var(--overlay-blur-color, #020817) 90%);
-  mask-image: radial-gradient(rgba(235, 235, 235, 0) 70%, var(--overlay-blur-color, #020817) 90%);
+  -webkit-mask-image: radial-gradient(rgba(235, 235, 235, 0) 70%, var(--overlay-blur-color, #000000) 90%);
+  mask-image: radial-gradient(rgba(235, 235, 235, 0) 70%, var(--overlay-blur-color, #000000) 90%);
   backdrop-filter: blur(3px);
 }
 
@@ -89,7 +94,7 @@ main.sphere-main {
   display: block;
   inset: 10px;
   border-radius: var(--tile-radius, 12px);
-  background: var(--overlay-blur-color, #020817);
+  background: var(--overlay-blur-color, #000000);
   overflow: hidden;
   backface-visibility: hidden;
   transition: transform 300ms;
@@ -187,7 +192,7 @@ main.sphere-main {
   height: 120px;
   z-index: 5;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--overlay-blur-color, #020817));
+  background: linear-gradient(to bottom, transparent, var(--overlay-blur-color, #000000));
 }
 
 .edge-fade--top {

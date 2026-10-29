@@ -54,11 +54,11 @@
 }
 
 /* ─────────────────────────────────────────────
-   YOKONAD CODEX — Flumen Senior Stream Design System
+   YOKONAD CODEX — Design System
    ───────────────────────────────────────────── */
 :root {
-  --paper: #020408;
-  --paper-2: #040711;
+  --paper: #000000;
+  --paper-2: #050505;
   --panel: rgba(5, 9, 17, 0.95);
   --panel-solid: #050911;
   --panel-hover: #080e1a;
@@ -126,6 +126,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100%;
   background-color: var(--paper);
 }
 
@@ -133,14 +134,13 @@ body {
   margin: 0;
   font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
   color: var(--ink);
-  background-color: var(--paper);
-  background-image: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(14, 35, 75, 0.65), transparent),
-    radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.03) 1px, transparent 0);
-  background-size: 100% 100%, 24px 24px;
+  background-color: #000000;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 
 p {
@@ -170,7 +170,7 @@ a {
   font-weight: 400;
 }
 
-/* ── Ventanas y tarjetas Flumen (Sobrias, Cuadradas, Estáticas) ── */
+/* ── Ventanas y tarjetas (Sobrias, Cuadradas, Estáticas) ── */
 .win {
   border: 1px solid var(--panel-border);
   background: var(--panel);
@@ -378,27 +378,27 @@ a {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: logoloop-scroll 34s linear infinite;
+  animation: logoloop-scroll 38s linear infinite;
   will-change: transform;
-}
-
-.logoloop:hover .logoloop__track {
-  animation-play-state: paused;
 }
 
 .logoloop__item {
   flex: 0 0 auto;
-  margin-right: 46px;
+  margin-right: 44px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
 }
 
 .logoloop__item img {
+  width: 36px;
   height: 36px;
-  width: auto;
+  max-width: 36px;
+  max-height: 36px;
+  object-fit: contain;
   display: block;
-  filter: brightness(0.85) contrast(1.1);
-  transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
 .logoloop__chip {
@@ -416,11 +416,6 @@ a {
   white-space: nowrap;
 }
 
-.logoloop__item:hover img {
-  filter: brightness(1.15);
-  transform: none;
-}
-
 .logoloop__item:hover .logoloop__chip {
   border-color: rgba(255, 255, 255, 0.3);
   transform: none;
@@ -432,12 +427,6 @@ a {
   }
   to {
     transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logoloop__track {
-    animation: none;
   }
 }
 

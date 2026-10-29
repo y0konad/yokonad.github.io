@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import CRTWarp from '../components/CRTWarp.jsx';
+import AsciiSharks from '../components/AsciiSharks.jsx';
 
 const {
   title = 'y0konad | Ciberseguridad, Redes y Desarrollo Web',
@@ -48,8 +48,6 @@ const schema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.simpleicons.org" />
     <link rel="preconnect" href="https://r2.thesportsdb.com" crossorigin />
     <link rel="dns-prefetch" href="https://r2.thesportsdb.com" />
     {path === '/' && (
@@ -57,37 +55,20 @@ const schema = {
     )}
     <link rel="preload" href="/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/press-start-2p-400.woff2" as="font" type="font/woff2" crossorigin />
-    <meta name="theme-color" content="#020817" />
+    <meta name="theme-color" content="#000000" />
     <link rel="icon" href="/picture/logos/linux.ico" />
     <title>{title}</title>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
   </head>
-  <body class="relative min-h-screen bg-[#020817] text-slate-100">
-    <div class="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden" aria-hidden="true">
-      <CRTWarp
-        client:only="react"
-        color="#38bdf8"
-        backgroundColor="#020817"
-        speed={0.4}
-        curvature={0.2}
-        scanlineStrength={0.22}
-        scanlineFrequency={220}
-        waveAmplitude={0.28}
-        waveFrequency={2.4}
-        bloom={1.4}
-        bloomRadius={1}
-        noise={0.08}
-        vignette={0.25}
-        brightness={1.15}
-        pixelation={1}
-        rgbShift={0.012}
-        mouseReact={true}
-        mouseStrength={0.45}
-        dpr={1}
-        fps={30}
-      />
+  <body class="relative min-h-screen bg-black text-slate-100 overflow-x-hidden w-full max-w-full">
+    <div
+      class="fixed inset-0 z-0 pointer-events-none w-full h-full overflow-hidden"
+      aria-hidden="true"
+      style="will-change: transform; transform: translate3d(0, 0, 0); contain: strict;"
+    >
+      <AsciiSharks client:only="react" />
     </div>
-    <div class="relative z-10 min-h-screen">
+    <div class="relative z-10 min-h-screen w-full max-w-full overflow-x-hidden">
       <slot />
     </div>
   </body>

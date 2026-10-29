@@ -51,27 +51,48 @@ const ScrambledText = ({
       });
     });
 
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-      return;
-    }
+    const triggerScrambleAll = () => {
+      charsRef.current.forEach((c, idx) => {
+        const originalText = c.dataset.content || c.textContent || '';
+        gsap.to(c, {
+          duration: duration * 0.75,
+          delay: idx * 0.035,
+          scrambleText: {
+            text: originalText,
+            chars: scrambleChars,
+            speed
+          },
+          ease: 'none'
+        });
+      });
+    };
 
     if (animateOnMount && charsRef.current.length > 0) {
-      gsap.from(charsRef.current, {
-        duration: duration * 0.55,
-        scrambleText: {
-          chars: scrambleChars,
-          speed
-        },
-        ease: 'none',
-        stagger: 0.015
-      });
+      triggerScrambleAll();
     }
 
     let rafId = null;
+    const triggerScrambleAt = (clientX, clientY) => {
+      charsRef.current.forEach(c => {
+        const { left, top, width, height } = c.getBoundingClientRect();
+        const dx = clientX - (left + width / 2);
+        const dy = clientY - (top + height / 2);
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < radius && !gsap.isTweening(c)) {
+          gsap.to(c, {
+            duration: duration * Math.max(0.35, 1 - dist / radius),
+            scrambleText: {
+              text: c.dataset.content || '',
+              chars: scrambleChars,
+              speed
+            },
+            ease: 'none'
+          });
+        }
+      });
+    };
+
     const handleMove = e => {
       if (rafId) return;
       const clientX = e.clientX;
@@ -79,31 +100,26 @@ const ScrambledText = ({
 
       rafId = requestAnimationFrame(() => {
         rafId = null;
-        charsRef.current.forEach(c => {
-          const { left, top, width, height } = c.getBoundingClientRect();
-          const dx = clientX - (left + width / 2);
-          const dy = clientY - (top + height / 2);
-          const dist = Math.hypot(dx, dy);
-
-          if (dist < radius && !gsap.isTweening(c)) {
-            gsap.to(c, {
-              duration: duration * Math.max(0.35, 1 - dist / radius),
-              scrambleText: {
-                text: c.dataset.content || '',
-                chars: scrambleChars,
-                speed
-              },
-              ease: 'none'
-            });
-          }
-        });
+        triggerScrambleAt(clientX, clientY);
       });
     };
 
+    const handlePointerDown = e => {
+      triggerScrambleAt(e.clientX, e.clientY);
+    };
+
+    const handlePointerEnter = () => {
+      triggerScrambleAll();
+    };
+
     el.addEventListener('pointermove', handleMove, { passive: true });
+    el.addEventListener('pointerdown', handlePointerDown, { passive: true });
+    el.addEventListener('pointerenter', handlePointerEnter, { passive: true });
 
     return () => {
       el.removeEventListener('pointermove', handleMove);
+      el.removeEventListener('pointerdown', handlePointerDown);
+      el.removeEventListener('pointerenter', handlePointerEnter);
       if (rafId) cancelAnimationFrame(rafId);
       if (split) {
         split.revert();
